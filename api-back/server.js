@@ -1,9 +1,25 @@
-const express = require('express')
-const cors = require('cors')
-const app = express()
+const express = require("express");
+const app = express();
+require("dotenv").config();
+require("./config/db");
+const bodyParser = require('body-parser')
+const routes = require("./routes")
 
-app.use(cors())
+const cors = require("cors");
+
+app.use(cors());
+app.use(express.json());
+
+app.use(bodyParser.json());
+
+
+
+app.use("/api" ,routes)
+
+
+
+const PORT = process.env.PORT;
 
 app.listen(3030, () => {
-    console.log("Servidor corriendo en el puerto http://localhost:3030");
-  });
+  console.log(`Servidor corriendo en el puerto ${PORT}`);
+});
