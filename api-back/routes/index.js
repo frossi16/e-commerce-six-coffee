@@ -1,13 +1,13 @@
-//index con varias rutas
-//esto es solo provisorio, en el marge vuela 
-const express = require("express");
-const router = express.Router();
-const routerUser = require('./routerUser.js')
 
-router.use('/user', routerUser)
+const express = require('express')
+const appRoutes = express()
+const user = require('../routes/user')
+const carritoCompra = require('../controllers/carrito.routes') // reedirijo la ruta al controller{maxi}
+appRoutes.use('/carrito',carritoCompra)
+appRoutes.use('/user', user)
 
-router.get("/", (req, res, next) => {
-    res.send("Servidor corriendo en el puerto http://localhost:3030");
-});
 
-module.exports = router; 
+module.exports=appRoutes
+
+
+

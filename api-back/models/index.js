@@ -1,35 +1,34 @@
-//modelo de users con mongoosse
-//solo para probar rutas de user
-//luego reemplazar por modelos de user de Ari
-/* const { Schema, model } = require("mongoose");
-const bcrypt = require('bcrypt');
 
+const { Schema, model } = require("mongoose");
+const Bcrypt = require("bcrypt");
+//const saltRounds = 10;
 const UserSchema = new Schema(
-    {
-        name: { type: String, trim: true },
-        email: { type: String, required: true, unique: true, trim: true },
-        password: { type: String, required: true },
-       date: { type: Date, default: Date.now }, 
-    },
+  {
+    name: { type: String, trim: true, unique: true },
+    email: { type: String, required: true, unique: true, trim: true },
+    password: { type: String, required: true },
+    date: { type: Date, default: Date.now },
+  },
+  {
+    timestamps: true,
+    versionKey: false,
+  }
+);
 
-    {
-        timestamps: true,
-        versionKey: false,
-    });
+//creacion del password ante de q envie la infomacion{maxi/sabri}
 
-    //Sabri: Debajo del modelo de Ari iría el bcrypt primero, antes de pasar a passport
-    userSchema.methods.encryptPassword = (password) => {
-  return bcrypt.hashSync(password, bcrypt.genSaltSync(16));
+UserSchema.pre("save", function (next) {
+  if (!this.isModified("password")) {
+    return next();
+  }
+  this.password = Bcrypt.hashSync(this.password, 10);
+  next();
+});
+//compara si la password es correcta{maxi/sabri}
+
+UserSchema.methods.comparePassword = function (plaintext, callback) {
+  return callback(null, Bcrypt.compareSync(plaintext, this.password));
 };
 
-userSchema.methods.comparePassword= function (password) {
-  return bcrypt.compareSync(password, this.password);
-};
-
-    
-module.exports = model('User', UserSchema); */
-/* https://www.youtube.com/watch?v=NN-Jt6EjFAc */
-/* https://www.youtube.com/watch?v=EpomajNVcMk&list=PLo5lAe9kQrwqUEXK7oQbzv63KsdODzuAy&index=17 */
-
-
+module.exports = model("user", UserSchema);
 
