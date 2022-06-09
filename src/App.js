@@ -1,26 +1,22 @@
-import React from 'react'
-import Navbar from './components/Navbar'
-/* import Login from './components/LogIn' */
-import Header from './components/Header'
-import { Routes, Router } from 'react-router'
+import React from "react";
+import { Route , Routes} from "react-router-dom";
+import {LogIn, SignUp, Navbar, Header} from "./components";
+import 'bootstrap/dist/css/bootstrap.css';
+
 
 const App = () => {
   return (
-
-
-    <div>
-      <Navbar />
+    <>
+     <Navbar />
       <Header />
-    </div>
-    /* <Routes>
-      <Router path='/' element={} />
-      <Router path='/login' element={<Login />} />
+      <Routes>
+        <Route path="/" element={<h1> Hola Mundo!!!</h1>} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/login" element={<LogIn />} />
+      </Routes>
+    </>
+  );
+};
 
-    </Routes> */
 
-
-
-  )
-}
-
-export default App
+export default App;
