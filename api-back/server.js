@@ -1,22 +1,22 @@
 const express = require('express')
 const cors = require('cors')
 const app = express()
-const db = require('./db')
-
+const appRoutes = require("./routes")
 const volleyball = require('volleyball')
-
-const BodyParser = require("body-parser"); //parseo del jaseom para el password {maxi/sabri}
-const appRoutes = require("./routes"); // requiero el index de routes {maxi}
+const bodyParser = require('body-parser')
+require("dotenv").config();
+require("./db");
 
 app.use(cors());
 app.use(express.json());
-app.use(BodyParser.json());
+app.use(bodyParser.json());
 
 app.use(volleyball);
 app.use(express.static('public'))
 app.use("/", appRoutes);
-app.listen(3030, () => {
-  console.log("Servidor corriendo en el puerto http://localhost:3030");
-})
 
+const PORT = process.env.PORT;
+app.listen(PORT, () => {
+  console.log(`Servidor corriendo en el puerto ${PORT}`);
+});
 

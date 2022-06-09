@@ -1,4 +1,3 @@
-
 const express = require('express')
 const appRoutes = express()
 const user = require('../routes/user')
@@ -8,6 +7,15 @@ appRoutes.use('/user', user)
 
 
 module.exports=appRoutes
+
+
+
+
+
+
+
+
+
 
 
 
