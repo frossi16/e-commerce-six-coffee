@@ -1,0 +1,80 @@
+import React, { useState } from "react";
+import axios from "axios";
+import * as validations from "./validations";
+import useInput from "../commons/useInput";
+import Input from "../commons/input";
+
+function NewUser() {
+  const name = useInput("", validations.username);
+  const lastName = useInput("", validations.username);
+  const email = useInput("", validations.email);
+  const password = useInput("", validations.password);
+
+  const isDisabled = () => {
+    return (
+      !name.value.length ||
+      name.error ||
+      lastName.value.length ||
+      lastName.error ||
+      email.value.length ||
+      email.error ||
+      password.value.length ||
+      password.error
+    );
+  };
+
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    axios
+      .post("http://localhost:3030/", {
+        name: name.value,
+        lastName: lastName.value,
+        email: email.value,
+        password: password.value,
+      })
+      .then((res) => res.data)
+      .catch((err) => console.log(err));
+  };
+
+  return (
+    <>
+      <div class="position relative">
+        <h1 class="position-absolute start-50 translate-middle titleForm">
+          Log In
+        </h1>
+        <div class="form">
+          <form class="row g-3" onSubmit={handleSubmit}>
+            <div class="col-12">
+              <Input
+                label={"Email"}
+                validation={validations.email}
+                placeholder={"adamsmith@email.com"}
+                type={'text'}
+              />
+            </div>
+            <div class="col-12">
+              <Input
+                label={"Password"}
+                validation={validations.password}
+                errorMessage="Invalid password"
+                type={'password'}
+              />
+            </div>
+            <div class="col-12"></div>
+            <div class="col-12"></div>
+          </form>
+          <button
+            disabled={isDisabled}
+            type="submit"
+            class="w-100 btn btn-primary btn-lg"
+          >
+            Log in
+          </button>
+        </div>
+      </div>
+    </>
+  );
+}
+
+export default NewUser;
