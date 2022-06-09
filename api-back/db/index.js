@@ -6,10 +6,10 @@ mongoose.connect(MONGODB_URI, {
     useUnifiedTopology: true,
     useNewUrlParser: true
 })
-    // .then( db => console.log('Database is connected'))
-    // .catch(err => console.log(err))
+// .then( db => console.log('Database is connected'))
+// .catch(err => console.log(err))
 
 
-mongoose.connection.on('open', _ =>{
+mongoose.connection.on('open', _ => {
     console.log('database is opened to', MONGODB_URI)
 })
