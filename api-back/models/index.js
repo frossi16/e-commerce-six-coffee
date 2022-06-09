@@ -1,4 +1,3 @@
-
 const { Schema, model } = require("mongoose");
 const Bcrypt = require("bcrypt");
 //const saltRounds = 10;
@@ -31,4 +30,6 @@ UserSchema.methods.comparePassword = function (plaintext, callback) {
 };
 
 module.exports = model("user", UserSchema);
+
+
 
