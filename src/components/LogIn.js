@@ -1,21 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import axios from "axios";
 import * as validations from "./validations";
 import useInput from "../commons/useInput";
 import Input from "../commons/input";
 
 function NewUser() {
-  const name = useInput("", validations.username);
-  const lastName = useInput("", validations.username);
   const email = useInput("", validations.email);
   const password = useInput("", validations.password);
 
   const isDisabled = () => {
     return (
-      !name.value.length ||
-      name.error ||
-      lastName.value.length ||
-      lastName.error ||
       email.value.length ||
       email.error ||
       password.value.length ||
@@ -28,8 +22,6 @@ function NewUser() {
     e.preventDefault();
     axios
       .post("http://localhost:3030/", {
-        name: name.value,
-        lastName: lastName.value,
         email: email.value,
         password: password.value,
       })
