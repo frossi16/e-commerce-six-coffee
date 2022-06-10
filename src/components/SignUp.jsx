@@ -5,7 +5,7 @@ import useInput from "../commons/useInput";
 import Input from "../commons/input";
 
 function NewUser() {
-  const name = useInput("", validations.username);
+  //const name = useInput("", validations.username);
   const lastName = useInput("", validations.username);
   const email = useInput("", validations.email);
   const password = useInput("", validations.password);
@@ -52,7 +52,7 @@ function NewUser() {
                 validation={validations.username}
                 errorMessage="Invalid name"
                 placeholder={"Adam"}
-                type={'text'}
+                type={"text"}
               />
             </div>
             <div class="col-md-6">
@@ -61,7 +61,7 @@ function NewUser() {
                 validation={validations.username}
                 errorMessage="Invalid last name"
                 placeholder={"Smith"}
-                type={'text'}
+                type={"text"}
               />
             </div>
             <div class="col-12">
@@ -70,7 +70,7 @@ function NewUser() {
                 validation={validations.email}
                 errorMessage="Invalid email"
                 placeholder={"adamsmith@email.com"}
-                type={'text'}
+                type={"text"}
               />
             </div>
             <div class="col-12">
@@ -78,7 +78,7 @@ function NewUser() {
                 label={"Password"}
                 validation={validations.password}
                 errorMessage="Invalid password"
-                type={'password'}
+                type={"password"}
               />
             </div>
             <div class="col-12">
@@ -95,14 +95,15 @@ function NewUser() {
               </div>
             </div>
             <div class="col-12"></div>
+
+            <button
+              disabled={isDisabled}
+              type="submit"
+              class="w-100 btn btn-primary btn-lg"
+            >
+              Sign in
+            </button>
           </form>
-          <button
-            disabled={isDisabled}
-            type="submit"
-            class="w-100 btn btn-primary btn-lg"
-          >
-            Sign in
-          </button>
         </div>
       </div>
     </>

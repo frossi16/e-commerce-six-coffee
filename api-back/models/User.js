@@ -9,7 +9,7 @@ const UserSchema = new Schema(
       trim: true,
     },
 
-    lastNme: {
+    lastName: {
       type: String,
       required: true,
       trim: true,
@@ -34,18 +34,17 @@ const UserSchema = new Schema(
       },
       required: [true, "Email required"],
     },
-    roles: [
-      {
-        ref: "Role",
-        type: Schema.Types.ObjectId,
-      },
-    ],
+    admin: {
+      type: Boolean,
+      default: false,
+      required: true,
+    },
   },
   {
     timestamps: true,
     versionKey: false,
   }
-); 
+);
 
 const User = mongoose.model("User", UserSchema);
 

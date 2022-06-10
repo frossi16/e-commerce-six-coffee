@@ -1,4 +1,4 @@
-const User = require("../models/index"); //acordar nombres de variable para no generar errore en el futuro{maxi/sabri}
+const User = require("../models/User");
 const Bcrypt = require("bcrypt");
 
 class UserServices {
@@ -43,9 +43,7 @@ class UserServices {
         }
       });
       return { error: false, data: "Usuario logueado" };
-    } catch (error) {
-    
-    }
+    } catch (error) {}
   }
 
   static async getUpdate(id, body) {

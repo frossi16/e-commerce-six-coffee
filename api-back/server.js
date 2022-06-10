@@ -16,7 +16,7 @@ app.use(express.static("public"));
 app.use("/", appRoutes);
 
 const PORT = process.env.PORT;
-app.listen(3030, () => {
+app.listen(PORT, () => {
   console.log(`Servidor corriendo en el puerto ${PORT}`);
 });
 

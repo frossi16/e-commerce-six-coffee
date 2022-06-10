@@ -1,4 +1,4 @@
-const UserServices = require("../services/User.Services");
+const UserServices = require("../services/User");
 
 class RoutersUser {
   static async getAll(req, res) {

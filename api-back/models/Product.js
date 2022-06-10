@@ -1,7 +1,7 @@
 const {Schema,model} = require("mongoose")
 
 const ProductSchema = new Schema ({
-    name: {
+    title: {
         type : String, 
         required:true,
     },
@@ -9,10 +9,21 @@ const ProductSchema = new Schema ({
         type : Number, 
         required:true,
     },
-    category: {
-        type: String,
+    image: {
+        type : String, 
         required:true,
-    }
+    },
+    stock: {
+        type : Number, 
+        required:true,
+    },
+
+    description: {
+        type : String, 
+        required:true,
+    },
+
+    
 })
 
 module.exports = model("Product",ProductSchema)
