@@ -1,5 +1,5 @@
 const User = require("../models/index"); //acordar nombres de variable para no generar errore en el futuro{maxi/sabri}
-const Bcrypt = require("bcryptjs");
+const Bcrypt = require("bcrypt");
 
 class UserServices {
   static async getAll() {
