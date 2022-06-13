@@ -26,6 +26,7 @@ class UserServices {
       await User.create(body);
       return { error: false, data: body };
     } catch (error) {
+      console.log(error);
       return { error: true, data: error };
     }
   }
@@ -36,15 +37,11 @@ class UserServices {
       if (!user) {
         return { error: true, data: "El usuario no existe" };
       }
-      user.comparePassword(body.password, (error, match) => {
-        if (!match) {
-          console.log(match);
-          return { error: true, data: "Contraseña invalida" };
-        }
-      });
+      user.matchPassword(body.password);
       return { error: false, data: "Usuario logueado" };
     } catch (error) {
-    
+      console.log(error);
+      return { error: true, data: error };
     }
   }
 

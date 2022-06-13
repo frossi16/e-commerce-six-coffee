@@ -6,7 +6,8 @@ const passport = require("passport");
 router.get("/all", RoutersUser.getAll);
 router.get("/:id", RoutersUser.getOne);
 router.post("/register", RoutersUser.createUser);
-router.post("/login",passport.authenticate("local"), RoutersUser.getLogin);
+router.post("/login", passport.authenticate("local"), RoutersUser.getLogin);
+router.post("/logout",RoutersUser.getLogout)
 router.put("/:id", RoutersUser.getUpdate);
 router.delete("/:id", RoutersUser.removeUser);
 
