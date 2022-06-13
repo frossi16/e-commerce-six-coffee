@@ -1,14 +1,12 @@
-
 const express = require("express");
 const cors = require("cors");
 const app = express();
-const bodyParser = require("body-parser");
+//const bodyParser = require("body-parser");
 const session = require("express-session");
 const appRoutes = require("./routes");
 const volleyball = require("volleyball");
 const passport = require("passport");
 require("./passport/LocalAutentificacion");
-
 
 require("dotenv").config();
 require("./db");
@@ -19,12 +17,11 @@ app.use(express.json());
 app.use(volleyball);
 app.use(express.static("public"));
 
-
 app.use(
   session({
-    secret: "e-comer",
-    resave: false,
-    saveUnitialized: false,
+    secret: "Six-coffe",
+    resave: true,
+    saveUninitialized: true,
   })
 );
 app.use(passport.initialize());
@@ -32,16 +29,12 @@ app.use(passport.session());
 
 app.use("/", appRoutes);
 
-const PORT = process.env.PORT;
-
+const PORT = process.env.PORTserver;
 
 //no corre el server por eso lo manipulo con el 3030
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en el puerto ${PORT}`);
 });
-
-
-
 
 // // TRAE BASE DE DATOS DE PRODUCTOS
 

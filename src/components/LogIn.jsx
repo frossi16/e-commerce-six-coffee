@@ -1,9 +1,9 @@
 /* Sabri: HIce una copia para poder dar estilo al formulario y probar el axios*/
 /* En el archivo Sigup está fallando el registro por las validaciones */
 
-import React, { useState } from 'react'
+import React from 'react'
 import axios from 'axios'
-import useInput from '../commons/useInput'
+import useInput from '../hooks/useInput'
 import { useNavigate } from 'react-router-dom'
 import '../sass/forms.scss'
 
@@ -12,6 +12,8 @@ function NewUser() {
     const password = useInput()
     const email = useInput()
     const navigate = useNavigate()
+
+
 
     /* Preguntar cómo se hace con async/awit */
     const handlerSubmit = (e) => {
@@ -25,11 +27,11 @@ function NewUser() {
     return (
         <>
             <form className="form" onSubmit={handlerSubmit}>
-                <h1 class='text-dark'>Log in</h1>
-                <div class="mb-3">
+                <h1 className='text-dark'>Log in</h1>
+                <div className="mb-3">
                     <input type="email" class="form-control input" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder='example@email.com' {...email} />
                 </div>
-                <div class="mb-3">
+                <div className="mb-3">
                     <input type="password" class="form-control input" id="exampleInputPassword1" placeholder='Password' {...password} />
                 </div>
                 <button type="submit" class="btn btn-danger input btn-form btn-register">Log In</button>

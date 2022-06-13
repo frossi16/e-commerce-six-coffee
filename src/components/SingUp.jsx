@@ -3,7 +3,7 @@
 
 import React from 'react'
 import axios from 'axios'
-import useInput from '../commons/useInput'
+import useInput from '../hooks/useInput'
 import { useNavigate } from 'react-router-dom'
 import '../sass/forms.scss'
 
@@ -25,24 +25,24 @@ function NewUser() {
     }
 
     return (
-        <div class='fondo'>
+        <div className='fondo'>
             <form className="form" onSubmit={handlerSubmit}>
-                <h1 class='text-danger' font-weight='bold'>Sing up </h1>
-                <div class="mb-3">
-                    <input class="form-control input" placeholder='First name'{...name} />
+                <h1 className='text-danger' font-weight='bold'>Sing up </h1>
+                <div className="mb-3">
+                    <input className="form-control input" placeholder='First name'{...name} />
                 </div>
-                <div class="mb-3">
+                <div className="mb-3">
 
                     <input class="form-control input" placeholder='Last Name' {...lastName} />
                 </div>
-                <div class="mb-3">
+                <div className="mb-3">
 
-                    <input type="email" class="form-control input" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder='example@email.com' {...email} />
+                    <input type="email" className="form-control input" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder='example@email.com' {...email} />
                 </div>
-                <div class="mb-3">
-                    <input type="password" class="form-control input" id="exampleInputPassword1" placeholder='Password' {...password} />
+                <div className="mb-3">
+                    <input type="password" className="form-control input" id="exampleInputPassword1" placeholder='Password' {...password} />
                 </div>
-                <button type="submit" class="btn btn-danger input btn-form btn-register">Sing Up</button>
+                <button type="submit" className="btn btn-danger input btn-form btn-register">Sing Up</button>
             </form>
         </div>
     );

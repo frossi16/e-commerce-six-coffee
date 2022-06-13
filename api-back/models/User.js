@@ -24,15 +24,8 @@ const UserSchema = new Schema(
     email: {
       type: String,
       trim: true,
-      lowercase: true,
+
       unique: true,
-      validate: {
-        validator: function (v) {
-          return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(v);
-        },
-        message: "Please enter a valid email",
-      },
-      required: [true, "Email required"],
     },
     admin: {
       type: Boolean,
@@ -42,7 +35,7 @@ const UserSchema = new Schema(
   },
   {
     timestamps: true,
-    versionKey: false,
+   
   }
 );
 

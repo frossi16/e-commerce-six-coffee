@@ -4,7 +4,7 @@ import { ImTwitter } from 'react-icons/im'
 import { FaInstagramSquare } from 'react-icons/fa'
 import { BsLinkedin } from 'react-icons/bs'
 import { IoLogoYoutube } from 'react-icons/io'
-import logo from '../assets/Logo.png'
+//import logo from '../assets/Logo.png'
 import '../sass/footer.scss'
 
 
@@ -15,50 +15,50 @@ const Footer = () => {
 
     return (
         <footer>
-            <div class='container-footer'>
-                <div class='box-footer'>
-                    <div class='logo'>
+            <div className='container-footer'>
+                <div className='box-footer'>
+                    <div className='logo'>
                         Acá va el logo
                     </div>
                 </div>
 
-                <div class='box-footer'>
+                <div className='box-footer'>
                     <h5>Intitucional</h5>
-                    <a href='#'> Quiénes somos</a>
-                    <a href='#'>Cómo comprar</a>
-                    <a href='#'>Información de envios</a>
-                    <a href='#'>Factura A</a>
-                    <a href='#'>Venta mayorista</a>
+                    
+                    <p > Quiénes somos</p>
+                    <a >Cómo comprar</a>
+                    <a >Información de envios</a>
+                    <a >Factura A</a>
+                    <a >Venta mayorista</a>
                 </div>
 
 
                 {/* Pongo los mismos links  */}
-                <div class='box-footer'>
+                <div className='box-footer'>
                     <h5>Cliente</h5>
-                    <a href='#'>Mi cuenta</a>
-                    <a href='#'>Mis favoritos</a>
-                    <a href='#'>Acceso a clientes</a>
-                    <a href='#'>Registrarse</a>
+                    <a >Mi cuenta</a>
+                    <a >Mis favoritos</a>
+                    <a >Acceso a clientes</a>
+                    <a >Registrarse</a>
                 </div>
 
-                <div class='box-footer'>
+                <div className='box-footer'>
                     <h5>Servicios</h5>
-                    <a href='#'>0800-543-CAFE(3222)</a>
-                    <a href='#'>Cóntactanos</a>
+                    <a>0800-543-CAFE(3222)</a>
+                    <a>Cóntactanos</a>
                 </div>
-
-                <div class='box-footer'>
+                <div className='box-footer'>
                     <h5>Redes sociales</h5>
-                    <a href='#'><GrFacebook class='rrss' />  Facebook</a>
-                    <a href='#'><ImTwitter class='rrss' />  Twitter</a>
-                    <a href='#'><FaInstagramSquare class='rrss' />  Instagram</a>
-                    <a href='#'><BsLinkedin class='rrss' />  Linkedin</a>
-                    <a href='#'><IoLogoYoutube class='rrss' />  Youtube</a>
+                    <a ><GrFacebook className='rrss' />  Facebook</a>
+                    <a ><ImTwitter className='rrss' />  Twitter</a>
+                    <a ><FaInstagramSquare className='rrss' />  Instagram</a>
+                    <a ><BsLinkedin className='rrss' />  Linkedin</a>
+                    <a ><IoLogoYoutube className='rrss' />  Youtube</a>
                 </div>
 
             </div>
 
-            <div class='box-copyright'>
+            <div className='box-copyright'>
                 <hr />
                 <p> <b>Six-Coffee</b> © 2022 - Todos los derechos reservados  </p>
             </div>
