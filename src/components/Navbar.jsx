@@ -3,7 +3,7 @@ import { BsSearch, BsPerson } from "react-icons/bs"
 import { AiOutlineShoppingCart } from 'react-icons/ai'
 import { Link } from 'react-router-dom'
 import logo from '../assets/Logo.png'
-import '../sass/navbar.scss'
+// import '../sass/navbar.scss'
 
 
 const Navbar = () => {

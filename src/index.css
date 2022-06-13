@@ -1,4 +1,4 @@
-@import './css/styles.css';/*Sabri: sale de la carpeta scc/styles.css. ¿Manejamos todo con extensión scss o css */
+@import './css/first.css';/*Sabri: sale de la carpeta scc/styles.css. ¿Manejamos todo con extensión scss o css */
 
 body {
   margin: 0;

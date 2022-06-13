@@ -1,4 +1,3 @@
-
 const express = require("express");
 const cors = require("cors");
 const app = express();
@@ -32,12 +31,14 @@ app.use(passport.session());
 
 app.use("/", appRoutes);
 
-const PORT = process.env.PORT;
+// SERVER_PORT PARA EL BACK
+// PORT PARA EL FRONT
+const PORT = process.env.SERVER_PORT;
 
 
 //no corre el server por eso lo manipulo con el 3030
 app.listen(PORT, () => {
-  console.log(`Servidor corriendo en el puerto ${PORT}`);
+  console.log(`Servidor corriendo en el puerto 3030`);
 });
 
 

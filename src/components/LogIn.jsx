@@ -1,11 +1,8 @@
-/* Sabri: HIce una copia para poder dar estilo al formulario y probar el axios*/
-/* En el archivo Sigup está fallando el registro por las validaciones */
-
 import React, { useState } from 'react'
 import axios from 'axios'
-import useInput from '../commons/useInput'
+import useInput from '../hooks/useInput'
 import { useNavigate } from 'react-router-dom'
-import '../sass/forms.scss'
+// import '../sass/forms.scss'
 
 
 function NewUser() {
