@@ -1,17 +1,33 @@
 import React from 'react'
+import img1 from '../assets/img1.webp'
+import img2 from '../assets/img2.webp'
+import img3 from '../assets/img3.webp'
 
 
 const Header = () => {
 
     return (
-        <div class="card bg-dark text-white">
-            <img src="https://media.istockphoto.com/photos/espresso-coffee-cup-with-beans-on-vintage-table-picture-id664313320?k=20&m=664313320&s=612x612&w=0&h=cg0PvaxP42ObSijWu0_6uQtOH3zJ2OPOiIaqtY_mcKI=" class="card-img" />
-            <div class="card-img-overlay">
-                <h5 class="card-title">Te llevamos el mejor cafe...</h5>
-                <p class="card-text">Acá estaría el header, que es provisorio. Y por cabala digo que esta pagina va a quedar hermosa :P</p>
-                <p class="card-text">Firma Sabri </p>
-            </div>
-        </div>
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src={img1} class="d-block w-100" alt="..."/>
+    </div>
+    <div class="carousel-item">
+      <img src={img2} class="d-block w-100" alt="..."/>
+    </div>
+    <div class="carousel-item">
+      <img src={img3} class="d-block w-100" alt="..."/>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
 
     )
 }

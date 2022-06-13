@@ -27,6 +27,7 @@ class UserServices {
       return { error: false, data: body };
     } catch (error) {
       console.log(error);
+
       return { error: true, data: error };
     }
   }
