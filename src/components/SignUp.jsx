@@ -23,7 +23,7 @@ function NewUser() {
     );
   };
 
-  const adminOnClick = () => {};
+  const adminOnClick = () => { };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -64,23 +64,23 @@ function NewUser() {
                 type={'text'}
               />
             </div>
-            <div class="col-12">
-              <Input
-                label={"Email"}
-                validation={validations.email}
-                errorMessage="Invalid email"
-                placeholder={"adamsmith@email.com"}
-                type={'text'}
-              />
-            </div>
-            <div class="col-12">
-              <Input
-                label={"Password"}
-                validation={validations.password}
-                errorMessage="Invalid password"
-                type={'password'}
-              />
-            </div>
+
+            <Input
+              label={"Email"}
+              validation={validations.email}
+              errorMessage="Invalid email"
+              placeholder={"adamsmith@email.com"}
+              type={'text'}
+            />
+
+            <Input
+              label={"Password"}
+              validation={validations.password}
+              errorMessage="Invalid password"
+              placeholder={"Password"}
+              type={'password'}
+            />
+
             <div class="col-12">
               <div class="form-check">
                 <input

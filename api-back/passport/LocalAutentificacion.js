@@ -1,89 +1,62 @@
 const express = require("express");
-const app = express();
-const passport = require("passport");
+const app = express()
+const bodyParser = require("body-parser");
+const cookieParser = require('cookie-parser')
+const session = require('express-session')
+const passport = require('passport')
 const LocalStrategy = require("passport-local").Strategy;
-const User = require("../models/user");
-const session = require("express-session");
+const User = require('../models/index') 
 
-app.use(
-  session({
-    secret: "six-coffee",
-    resave: false,
-    saveUninitialized: true,
-  })
-);
-app.use(passport.initialize());
-app.use(passport.session());
 
-passport.use(
-  new LocalStrategy(
-    {
-      usernameField: "email",
-      passwordField: "password",
-    },
-    async (email, password, done) => {
-      const user = await User.findOne({ email: email });
-      console.log(user);
-      try {
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
+//Ejecuto cookies 
+app.use(cookieParser())
+
+app.use(session({
+  secret: 'six-coffee',
+  resave: true,
+  saveUninitialized: true,
+
+}))
+
+app.use(passport.initialize())
+app.use(passport.session())
+
+
+//LocalEstrategy
+passport.use(new LocalStrategy({
+  usernameField: "email",
+  passwordField: "password",
+},
+  function (email, password, done) {
+    User.findOne({ email: email })
+      .then((user) => {
         if (!user) {
-          return done(null, false); // user not found
+          return done(null, false, { message: 'Incorrect username ' })
         }
-
         if (!user.comparePassword(password)) {
-          return done(null, false);
+          return done(null, false, { message: 'Incorrect username ' })
         }
-        return done(null, user);
-        //   user.hash(password, user.salt).then((hash) => {
-        //     if (hash !== user.password) {
-        //       return done(null, false); // invalid password
-        //     }
-        //     return done(null, user); // success 😄
-        //   });
-      } catch (error) {
-        console.log(error);
-      }
-    }
-  )
-);
-passport.serializeUser((user, done) => {
+        return done(done)
+      })
+      .catch(done)
+
+  }
+))
+
+
+// How we save the user
+passport.serializeUser(function (user, done) {
   done(null, user.id);
 });
 
-passport.deserializeUser(async (id, done) => {
-  const user = await User.findById(id);
-  done(null, user);
+// How we look for the user
+passport.deserializeUser(function (id, done) {
+  Users.findById(id)
+    .then(user => done(null, user))
+    .catch(done)
 });
 
-// passport.use('local-signup', new LocalStrategy({
-//   usernameField: 'email',
-//   passwordField: 'password',
-//   passReqToCallback: true
-// }, async (req, email, password, done) => {
-//   const user = await User.findOne({'email': email})
-//   console.log(user)
-//   if(user) {
-//     return done(null, false, req.flash('signupMessage', 'The Email is already Taken.'));
-//   } else {
-//     const newUser = new User();
-//     newUser.email = email;
-//     newUser.password = newUser.encryptPassword(password);
-//   console.log(newUser)
-//     await newUser.save();
-//     done(null, newUser);
-//   }
-// }));
-
-// passport.use('local-signin', new LocalStrategy({
-//   usernameField: 'email',
-//   passwordField: 'password',
-//   passReqToCallback: true
-// }, async (req, email, password, done) => {
-//   const user = await User.findOne({email: email});
-//   if(!user) {
-//     return done(null, false, req.flash('signinMessage', 'No User Found'));
-//   }
-//   if(!user.comparePassword(password)) {
-//     return done(null, false, req.flash('signinMessage', 'Incorrect Password'));
-//   }
-//   return done(null, user);
-// }));
+module.export = passport

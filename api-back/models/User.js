@@ -9,7 +9,7 @@ const UserSchema = new Schema(
       trim: true,
     },
 
-    lastNme: {
+    lastName: {
       type: String,
       required: true,
       trim: true,
@@ -45,7 +45,7 @@ const UserSchema = new Schema(
     timestamps: true,
     versionKey: false,
   }
-); 
+);
 
 const User = mongoose.model("User", UserSchema);
 

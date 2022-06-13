@@ -1,5 +1,6 @@
-const User = require("../models/index"); //acordar nombres de variable para no generar errore en el futuro{maxi/sabri}
-const Bcrypt = require("bcryptjs");
+const User = require("../models/index"); //cambiar a '../models/User' y mover el bcryp de index 
+const Bcrypt = require('bcrypt')
+const passport = require('../passport/LocalAutentificacion')
 
 class UserServices {
   static async getAll() {
@@ -26,6 +27,7 @@ class UserServices {
       await User.create(body);
       return { error: false, data: body };
     } catch (error) {
+      console.log(error)
       return { error: true, data: error };
     }
   }
@@ -44,7 +46,7 @@ class UserServices {
       });
       return { error: false, data: "Usuario logueado" };
     } catch (error) {
-    
+
     }
   }
 

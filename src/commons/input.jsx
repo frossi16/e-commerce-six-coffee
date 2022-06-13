@@ -1,4 +1,4 @@
-import React from "react";
+/* import React from "react";
 import useInput from "./useInput";
 
 function Input({label, validation, errorMessage, placeholder, type}) {
@@ -24,3 +24,4 @@ function Input({label, validation, errorMessage, placeholder, type}) {
 }
 
 export default Input;
+ */
