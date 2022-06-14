@@ -27,6 +27,7 @@ class RoutersUser {
 
   static async getLogin(req, res) {
     const { error, data } = await UserServices.getLogin(req.body, req.user);
+    console.log(error)
 
     if (error) {
       return res.status(400).send(data);

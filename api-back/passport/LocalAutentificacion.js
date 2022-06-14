@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/vistaCarrito
 const User = require("../models/User");
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;

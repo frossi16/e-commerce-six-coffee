@@ -5,7 +5,7 @@ const productsRouter = require("./product");
 const carritoCompra = require("./ventas"); // reedirijo la ruta al controller{maxi}
 const Historials = require("../models/Historial");
 const CarritoPosta = require("../models/CarritoPosta.js");
-
+const RoutersVentas = require('./ventas')
 // prueba de confirmacion de venta del historial {maxi}
 // appRoutes.post("/prueba/:id", async (req, res) => {
 //   const carrito = await CarritoPosta.find({idUser:req.params.id})
@@ -27,15 +27,5 @@ appRoutes.use("/user", user);
 appRoutes.use("/products", productsRouter);
 appRoutes.use("/ventas", RoutersVentas);
 
-<<<<<<< HEAD
 module.exports = appRoutes;
-=======
 
-module.exports = appRoutes
-
-
-
-
-
-
->>>>>>> origin/seedDb

@@ -37,11 +37,9 @@
     "web-vitals": "^2.1.4"
   },
 
-<<<<<<< HEAD
-  "proxy": "http://localhost:3030/",
 
-=======
->>>>>>> origin/seedDb
+
+
   "scripts": {
     "start": "concurrently 'npm run server' 'npm run client'",
     "server": "nodemon api-back/server.js",
