@@ -4,7 +4,7 @@ import Header from "./components/Header";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import SignUp from "./components/SingUp1";
-import LogIn from "./components/LogIn1";
+import LogIn from "./components/LogIn";
 
 const App = () => {
   return (

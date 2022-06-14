@@ -52,6 +52,21 @@ class RoutersUser {
     res.status(201).send(data);
   }
 
+  static async getAdminUpdate(req, res) {
+    
+    if (req.body.admin === false && req.user.id === req.params.id) {
+      return res.senStatus(401);
+    }
+    const { error, data } = await UserServices.getAdminUpdate(
+      req.params.id,
+      req.body
+    );
+    if (error) {
+      return res.status(400).send(data);
+    }
+    return res.status(202).send(data);
+  }
+
   static async removeUser(req, res) {
     const { error, data } = await UserServices.removeUser(req.params.id);
     if (error) {
