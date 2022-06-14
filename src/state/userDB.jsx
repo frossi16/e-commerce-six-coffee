@@ -1,14 +1,15 @@
+import { createAsyncThunk, createReducer } from "@reduxjs/toolkit";
+import axios from "axios";
 
-import { createAction, createReducer } from "@reduxjs/toolkit";
+export const getAllUserRequest = createAsyncThunk("GET_All_USER", () => {
+  return axios.get("http://localhost:3030/user/all").then((res) => res.data);
+});
 
-const setUserDB = createAction("SET_USERDB");
+const setUserDBReducer = createReducer(
+  {},
+  {
+    [getAllUserRequest.fulfilled]: (state, action) => action.payload,
+  }
+);
 
-const setUserDBReducer = createReducer({},{
-
-    
-    [setUserDB]:(state,action)=> action.payloead
-})
-
-export default  setUserDBReducer;
-
-
+export default setUserDBReducer;

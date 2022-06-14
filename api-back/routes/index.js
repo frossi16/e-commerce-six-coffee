@@ -4,9 +4,7 @@ const user = require("../routes/user");
 const productsRouter = require("./product");
 const carritoCompra = require("./ventas"); // reedirijo la ruta al controller{maxi}
 const Historials = require("../models/Historial");
-const CarritoPosta = require('../models/CarritoPosta.js')
-
-
+const CarritoPosta = require("../models/CarritoPosta.js");
 
 // prueba de confirmacion de venta del historial {maxi}
 // appRoutes.post("/prueba/:id", async (req, res) => {
@@ -25,6 +23,8 @@ const CarritoPosta = require('../models/CarritoPosta.js')
 
 appRoutes.use("/carrito", carritoCompra);
 appRoutes.use("/user", user);
+
 appRoutes.use("/products", productsRouter);
+appRoutes.use("/ventas", RoutersVentas);
 
 module.exports = appRoutes;
