@@ -30,6 +30,7 @@ app.use(passport.session());
 app.use("/", appRoutes);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 const PORT = process.env.PORTserver;
 
 //no corre el server por eso lo manipulo con el 3030
@@ -46,15 +47,21 @@ app.listen(PORT, () => {
   console.log(`Servidor corriendo en el puerto 3030`);
 });
 
+=======
+/* const PORT = process.env.PORT; */
+
+//no corre el server por eso lo manipulo con el 3030
+app.listen(3030, () => {
+  console.log(`Servidor corriendo en el puerto 3030`);
+});
+
+
+>>>>>>> origin/vistaCarrito
 // // TRAE BASE DE DATOS DE PRODUCTOS
-
 // const mongoose = require("mongoose");
-
 // const connection = mongoose.connection;
-
 // connection.once("open", async function () {
 //   const collection = connection.db.collection("products");
-
 //   collection.find({}).toArray(function (err, data) {
 //     console.log(data);
 //   });
