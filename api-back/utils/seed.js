@@ -17,6 +17,7 @@ const products =[
         category: 'Molido',
         stock: 10,
         image:'https://cafemartinez.vtexassets.com/arquivos/ids/155523-1200-auto?v=637463658782630000&width=1200&height=auto&aspect=true',
+        description: "Variedad de café molido Tipo Italiano de 500g de Café Martínez. Pack reforzado especialmente para conservar el café.",
     },
     {
         title: 'Café Molido Brasil 500g',
@@ -24,6 +25,8 @@ const products =[
         category: 'Molido',
         stock: 10,
         image:'https://cafemartinez.vtexassets.com/arquivos/ids/155522-1200-auto?v=637463658780130000&width=1200&height=auto&aspect=true',
+        description: "Variedad de café molido Brasil de 500g de Café Martínez. Pack reforzado especialmente para conservar el café.",
+
     },
     {
         title: 'Café Molido Selecto 500g',
@@ -31,13 +34,15 @@ const products =[
         category: 'Molido',
         stock: 10,
         image:'https://cafemartinez.vtexassets.com/arquivos/ids/155537-1200-auto?v=637463658821500000&width=1200&height=auto&aspect=true',
-    },
+        description: "Variedad de café molido Selecto de 500g de Café Martínez. Pack reforzado especialmente para conservar el café.",
+    },  
     {
         title: 'Café Molido Moka 500g',
         price: 2100,
         category: 'Molido',
         stock: 10,
         image:'https://cafemartinez.vtexassets.com/arquivos/ids/155536-1200-auto?v=637463658819000000&width=1200&height=auto&aspect=true',
+        description: "Variedad de café molido Moka de 250g de Café Martínez. Pack reforzado especialmente para conservar el café."
     },
     {
         title: 'Café en grano Colombia 1kg',
@@ -45,6 +50,7 @@ const products =[
         category: 'Grano',
         stock: 10,
         image:'https://cafemartinez.vtexassets.com/arquivos/ids/155508-1200-auto?v=637463658737430000&width=1200&height=auto&aspect=true',
+        description: "Variedad de café en grano Colombia de 1kg de Café Martínez. Pack reforzado especialmente para conservar el café."
     },
     {
         title: 'Café en grano Brasil 1kg',
@@ -52,6 +58,8 @@ const products =[
         category: 'Grano',
         stock: 10,
         image:'https://cafemartinez.vtexassets.com/arquivos/ids/155507-1200-auto?v=637463658733670000&width=1200&height=auto&aspect=true',
+        description: "Variedad de café en grano Brasil de 1kg de Café Martínez. Pack reforzado especialmente para conservar el café."
+        
     },
     {
         title: 'Café en grano Moka 1kg',
@@ -59,6 +67,7 @@ const products =[
         category: 'Grano',
         stock: 10,
         image:'https://cafemartinez.vtexassets.com/arquivos/ids/155507-1200-auto?v=637463658733670000&width=1200&height=auto&aspect=true',
+        description: "Variedad de café en grano Moka de 1kg de Café Martínez. Pack reforzado especialmente para conservar el café."
     },
     {
         title: 'Café en grano Brasil 1kg',
@@ -66,6 +75,7 @@ const products =[
         category: 'Grano',
         stock: 10,
         image:'https://cafemartinez.vtexassets.com/arquivos/ids/155510-1200-auto?v=637463658745100000&width=1200&height=auto&aspect=true',
+        description: "Variedad de café en grano Brasil de 1kg de Café Martínez. Pack reforzado especialmente para conservar el café."
     },
     {
         title: 'Café en grano Selecto 1kg',
@@ -73,6 +83,7 @@ const products =[
         category: 'Grano',
         stock: 10,
         image:'https://cafemartinez.vtexassets.com/arquivos/ids/155506-1200-auto?v=637463658729300000&width=1200&height=auto&aspect=true',
+        description: "Variedad de café en grano Selecto de 1kg de Café Martínez. Pack reforzado especialmente para conservar el café."
     },
     {
         title: 'Café en grano Tipo Italiano 1kg',
@@ -80,7 +91,8 @@ const products =[
         category: 'Grano',
         stock: 10,
         image:'https://cafemartinez.vtexassets.com/arquivos/ids/155511-1200-auto?v=637463658748230000&width=1200&height=auto&aspect=true',
-    },
+        description: "Variedad de café en grano Italiano de 1kg de Café Martínez. Pack reforzado especialmente para conservar el café."}
+    ,
 ]
 
 

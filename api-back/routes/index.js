@@ -9,6 +9,7 @@ appRoutes.use('/carrito', carritoCompra)
 appRoutes.use('/user', user)
 appRoutes.use("/products", productsRouter);
 
+
 module.exports = appRoutes
 
 

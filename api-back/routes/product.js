@@ -11,5 +11,7 @@ router.put("/:id",ProductController.updateOne)
 router.delete("/:id",ProductController.deleteOne)
 router.get("/category/:category",ProductController.getAllByCategory)
 
+router.get("/:id/reviews", ProductController.getReviews)
+router.post("/:id/reviews", ProductController.addReviews)
 
 module.exports = router;

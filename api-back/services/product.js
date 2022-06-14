@@ -1,4 +1,5 @@
 const Product = require("../models/Product");
+const Comment = require("../models/Comments")
 
 class ProductServices {
   static async getAll(params) {
@@ -79,6 +80,39 @@ class ProductServices {
       };
     }
   }
+
+
+  static async getReviews(productId) {
+    try {
+      const data = await Comment.find({productId:productId}).exec();
+      return {
+        error: false,
+        data: data,
+      };
+    } catch (error) {
+      return {
+        error: true,
+        data: "error 404: page not found",
+      };
+    }
+  }
+
+  static async addReviews(body) {
+    try {
+      await Comment.create(body);
+      return {
+        error: false,
+        data: body,
+      };
+    } catch (error) {
+      console.log(error);
+      return {
+        error: true,
+        data: error,
+      };
+    }
+  }
+
 }
 
 module.exports = ProductServices;
