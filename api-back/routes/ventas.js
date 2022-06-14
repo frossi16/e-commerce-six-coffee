@@ -1,11 +1,9 @@
 const express = require("express");
 const router = express.Router()
-
-const ventastCtrl = require("../controllers/product")
-
+const RoutersVentas = require("../controllers/ventaControllers")
 
 
-router.get("/ventas", ventastCtrl);
+router.get("/all",RoutersVentas.getAll)
 
 
 

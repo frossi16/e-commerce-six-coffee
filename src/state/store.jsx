@@ -14,7 +14,7 @@ const store = configureStore({
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
   reducer: {
     userLogin: userLoginReducer,
-    userDB:setUserDBReducer,
+    userDB: setUserDBReducer,
     productos: productosReducer,
     ventas: ventasReducer,
   },

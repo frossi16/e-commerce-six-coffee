@@ -1,9 +1,15 @@
-import { createAction, createReducer } from "@reduxjs/toolkit";
+import { createAsyncThunk, createReducer } from "@reduxjs/toolkit";
+import axios from "axios";
 
-const setProductos = createAction("SET_PRODUCTOS");
+export const getAllProductRequest = createAsyncThunk("PRODUCTOS", () => {
+  return axios
+    .get("http://localhost:3030/products/all")
+    .then((res) => res.data);
+});
 
-const productosReducer = createReducer([],{
-    [setProductos]:(state,action)=> action.payloead
-})
+const productosReducer = createReducer(
+    [], {
+  [getAllProductRequest.fulfilled]: (state, action) => action.payload,
+});
 
-export default  productosReducer;
+export default productosReducer;

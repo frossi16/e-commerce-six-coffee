@@ -1,9 +1,19 @@
-import { createAction, createReducer } from "@reduxjs/toolkit";
 
-const setVentas = createAction("SET_VENTAS");
 
-const ventasReducer = createReducer({},{
-    [setVentas]:(state,action)=> action.payloead
-})
 
-export default  ventasReducer;
+
+import { createAsyncThunk, createReducer } from "@reduxjs/toolkit";
+import axios from "axios";
+
+export const getAllVentasRequest = createAsyncThunk("VENTAS", () => {
+  return axios
+    .get("http://localhost:3030/ventas/all")
+    .then((res) => res.data);
+});
+
+const ventasReducer = createReducer(
+    [], {
+  [getAllVentasRequest.fulfilled]: (state, action) => action.payload,
+});
+
+export default ventasReducer;
