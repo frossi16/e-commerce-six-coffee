@@ -36,7 +36,9 @@
     "volleyball": "^1.5.1",
     "web-vitals": "^2.1.4"
   },
-  "proxy": "http://localhost:3000",
+
+  "proxy": "http://localhost:3030/",
+
   "scripts": {
     "start": "concurrently 'npm run server' 'npm run client'",
     "server": "nodemon api-back/server.js",

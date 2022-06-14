@@ -32,8 +32,8 @@ app.use("/", appRoutes);
 const PORT = process.env.PORTserver;
 
 //no corre el server por eso lo manipulo con el 3030
-app.listen(PORT, () => {
-  console.log(`Servidor corriendo en el puerto ${PORT}`);
+app.listen(3030, () => {
+  console.log(`Servidor corriendo en el puerto 3030`);
 });
 
 // // TRAE BASE DE DATOS DE PRODUCTOS

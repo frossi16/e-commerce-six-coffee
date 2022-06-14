@@ -5,32 +5,32 @@ const VentaSchema = new Schema({
   buyer: {
     name: {
       type: String,
-      equired: true,
+      required: true,
       trim: true,
     },
 
     lastName: {
       type: String,
-      equired: true,
+      required: true,
       trim: true,
     },
   },
-
+// imagen de referencia {maxi}
   producto: {
     name: {
       type: String,
-      equired: true,
+      required: true,
       trim: true,
     },
 
     price: {
       type: Number,
-      equired: true,
+      required: true,
       trim: true,
     },
     cant: {
       type: Number,
-      equired: true,
+      required: true,
       trim: true,
     },
   },
