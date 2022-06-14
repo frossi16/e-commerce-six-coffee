@@ -1,0 +1,29 @@
+.text {
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff; }
+
+.text-name {
+  /* font-size: 500 */
+  font-weight: 500;
+  color: #fff; }
+
+.menu {
+  border-radius: 0%; }
+
+.input-search {
+  border-color: black; }
+
+.search {
+  position: relative; }
+
+.user {
+  margin-right: 1%; }
+
+nav {
+  width: 100%;
+  background-color: rgba(83, 199, 219, 0.514);
+  opacity: 90%; }
+
+a {
+  text-decoration: none; }

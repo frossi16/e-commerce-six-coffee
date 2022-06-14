@@ -37,14 +37,18 @@
     "web-vitals": "^2.1.4"
   },
 
+<<<<<<< HEAD
   "proxy": "http://localhost:3030/",
 
+=======
+>>>>>>> origin/seedDb
   "scripts": {
     "start": "concurrently 'npm run server' 'npm run client'",
     "server": "nodemon api-back/server.js",
+    "seed" : "node api-back/utils/seed.js",
     "client": "react-scripts start",
     "build": "react-scripts build",
-    "build-css": "node-sass -w src/sass/index.scss -o src/css/styles.css",
+    "build-css": "node-sass -w src/sass/first.scss -o src/css/",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

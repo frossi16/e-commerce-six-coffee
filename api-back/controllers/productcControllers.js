@@ -67,6 +67,29 @@ class ProductController {
     }
     res.status(200).send(data);
   }
+
+
+
+
+  static async getReviews(req, res) {
+    const { error, data } = await ProductServices.getReviews(req.params.id);
+    if (error) {
+      return res.status(500).send({ message: data.message });
+    }
+    res.status(201).send(data);
+  }
+
+  static async addReviews(req, res) {
+    const { error, data } = await ProductServices.addReviews(req.body);
+    console.log(req.body + '     body')
+    if (error) {
+      return res.status(500).send({ message: data.message });
+    }
+    res.status(201).send(data);
+  }
+
+
+
 }
 
 module.exports = ProductController;

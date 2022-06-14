@@ -1,0 +1,16 @@
+.cards {
+  max-width: 20%;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 50px 0px; }
+  .cards img {
+    width: 100%; }
+  .cards p {
+    text-align: center; }
+  .cards button {
+    max-width: 50%; }
+
+.links {
+  max-width: 20%; }

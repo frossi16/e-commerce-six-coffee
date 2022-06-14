@@ -4,8 +4,13 @@ import { ImTwitter } from 'react-icons/im'
 import { FaInstagramSquare } from 'react-icons/fa'
 import { BsLinkedin } from 'react-icons/bs'
 import { IoLogoYoutube } from 'react-icons/io'
+<<<<<<< HEAD
 //import logo from '../assets/Logo.png'
 import '../sass/footer.scss'
+=======
+import logo from '../assets/Logo.png'
+// import '../sass/footer.scss'
+>>>>>>> origin/seedDb
 
 
 

@@ -27,4 +27,15 @@ appRoutes.use("/user", user);
 appRoutes.use("/products", productsRouter);
 appRoutes.use("/ventas", RoutersVentas);
 
+<<<<<<< HEAD
 module.exports = appRoutes;
+=======
+
+module.exports = appRoutes
+
+
+
+
+
+
+>>>>>>> origin/seedDb

@@ -29,10 +29,20 @@ app.use(passport.session());
 
 app.use("/", appRoutes);
 
+<<<<<<< HEAD
 const PORT = process.env.PORTserver;
 
 //no corre el server por eso lo manipulo con el 3030
 app.listen(3030, () => {
+=======
+// SERVER_PORT PARA EL BACK
+// PORT PARA EL FRONT
+const PORT = process.env.SERVER_PORT;
+
+
+//no corre el server por eso lo manipulo con el 3030
+app.listen(PORT, () => {
+>>>>>>> origin/seedDb
   console.log(`Servidor corriendo en el puerto 3030`);
 });
 

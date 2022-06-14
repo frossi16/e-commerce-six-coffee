@@ -1,0 +1,189 @@
+/* Sabri: Dejo un nuevo formato para el formulario */
+.form {
+  max-width: 40%;
+  margin: 3% 30% 2% 30%;
+  /*  color: blue; */ }
+
+body {
+  background-image: url("../assets/cafe1.webp");
+  background-size: cover;
+  background-color: transparent;
+  /* opacity: 70%; */ }
+
+/* .titleForm{
+    padding-bottom:5%;
+    color: red;
+} */
+/*.error{
+    color:red;
+} */
+.btn-form {
+  width: 100%;
+  color: grey;
+  cursor: pointer;
+  transition: .3s ease all;
+  background-color: #E50914;
+  border-color: none;
+  margin-top: 2%;
+  border-radius: 0.31em; }
+
+.btn-register {
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border-color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: .3s ease all;
+  background: rgba(73, 70, 70, 0.3);
+  border-radius: 0.31em; }
+
+.title-register-login {
+  margin-bottom: 1%;
+  text-align: center;
+  color: #E50914;
+  font-weight: bold; }
+
+footer {
+  width: 100%;
+  padding: 50px 0px 5px 0px;
+  background-color: #051a23;
+  opacity: 80%;
+  -webkit-mask-image: url("../assets/background-footer.svg");
+  mask-image: url("../assets/background-footer.svg");
+  -webkit-mask-size: cover;
+  mask-size: cover; }
+
+.container-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+  margin-top: 30px; }
+
+.box-footer {
+  display: flex;
+  flex-direction: column;
+  padding: 40px; }
+
+/* Para cuando traiga la imagen */
+.box-footer .logo img {
+  width: 180px; }
+
+/* logo */
+.box-footer {
+  margin-bottom: 20px;
+  color: #f7f8f8;
+  font-weight: 700; }
+
+.box-footer a {
+  margin-top: 10px;
+  color: #f7f8f8;
+  font-weight: 300; }
+
+.box-footer a:hover {
+  opacity: 0.8; }
+
+.box-footer h5 {
+  font-weight: bolder;
+  font-size: 600; }
+
+a {
+  text-decoration: none; }
+
+.box-footer .rrss {
+  font-size: 20px; }
+
+.box-copyright {
+  max-width: 1200px;
+  margin: auto;
+  text-align: center; }
+
+.box-copyright p {
+  margin-top: 20px;
+  color: #f7f8f8; }
+
+.box-copyright hr {
+  border: none;
+  height: 1px;
+  background-color: #f7f8f8; }
+
+.text {
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff; }
+
+.text-name {
+  /* font-size: 500 */
+  font-weight: 500;
+  color: #fff; }
+
+.menu {
+  border-radius: 0%; }
+
+.input-search {
+  border-color: black; }
+
+.search {
+  position: relative; }
+
+.user {
+  margin-right: 1%; }
+
+nav {
+  width: 100%;
+  background-color: rgba(83, 199, 219, 0.514);
+  opacity: 90%; }
+
+a {
+  text-decoration: none; }
+
+.cards {
+  max-width: 20%;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 50px 0px; }
+  .cards img {
+    width: 100%; }
+  .cards p {
+    text-align: center; }
+  .cards button {
+    max-width: 50%; }
+
+.links {
+  max-width: 20%; }
+
+.cols {
+  background-color: white; }
+
+.viewImg {
+  width: 40%; }
+
+.cardButton {
+  width: 70%; }
+
+.titleForm {
+  margin: 0; }
+
+.commentBox {
+  height: 100px; }
+
+.puntuation {
+  align-items: center; }
+
+.individualComment {
+  border: 1px solid grey; }
+
+.containerComments {
+  max-height: 300px;
+  overflow: auto; }
+
+.comm-punt {
+  width: 100px; }
+
+.grilla {
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%; }
