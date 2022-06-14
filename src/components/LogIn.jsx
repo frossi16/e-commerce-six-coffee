@@ -1,11 +1,13 @@
 /* Sabri: HIce una copia para poder dar estilo al formulario y probar el axios*/
 /* En el archivo Sigup está fallando el registro por las validaciones */
 
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 import axios from 'axios'
-import useInput from '../commons/useInput'
+import useInput from '../hooks/useInput'
 import { useNavigate } from 'react-router-dom'
+import { AuthContext } from '../hooks/AuthContextProvider'
 import '../sass/forms.scss'
+
 
 
 function NewUser() {
@@ -13,14 +15,24 @@ function NewUser() {
     const email = useInput()
     const navigate = useNavigate()
 
-    /* Preguntar cómo se hace con async/awit */
+
     const handlerSubmit = (e) => {
         e.preventDefault()
         axios.post('http://localhost:3030/user/login', ({ email: email.value, password: password.value }))
-            .then((res) => res.data)
+            .then((data) => {
+                console.log(data.data._id)
+                console.log(data.data.name)
+
+                localStorage.setItem('user', JSON.stringify(data.data._id))
+                localStorage.setItem('name', JSON.stringify(data.data.name))
+
+            })
             .then(() => navigate('/'))
             .catch(error => console.log(error))
     }
+
+
+
 
     return (
         <>

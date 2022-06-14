@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect } from "react";
+/* import { createContext, useState, useEffect } from "react";
 
 const initialState = {
     user: null,
@@ -23,6 +23,7 @@ export const AuthContextProvider = ({ children }) => {
 
     useEffect(() => {
         const userStorage = JSON.parse(localStorage.getItem('user'))
+        const nameStorage = JSON.parse(localStorage.getItem('name'))
         userStorage ? setIsLogged({ user: userStorage.name, isAuth: true }) : setIsLogged({ user: null, isAuth: false })
     }, [])
 
@@ -30,4 +31,4 @@ export const AuthContextProvider = ({ children }) => {
 
 }
 
-export default AuthContext;
+export default AuthContext; */

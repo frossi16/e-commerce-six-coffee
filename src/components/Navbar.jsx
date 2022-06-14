@@ -1,15 +1,14 @@
-import React from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { BsSearch, BsPerson } from "react-icons/bs"
 import { AiOutlineShoppingCart } from 'react-icons/ai'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import axios from 'axios'
 import logo from '../assets/Logo.png'
 import '../sass/navbar.scss'
 
 
 const Navbar = () => {
-    /* Sabri: */
-    /* Los tag a van a ser reemplazados por Link en futuro */
-    /* Seguro haya que ajustar las cosas por el contador del carrito */
+
 
     return (
         <div>
@@ -69,17 +68,9 @@ const Navbar = () => {
                 </div>
             </nav >
 
-            <nav class=''>
+            <nav>
                 <div class="container-fluid">
                     <div class="container">
-                        <ul class="nav justify-content-end">
-                            <li class="nav-item">
-                                <a class="nav-link text" href="#">Not loging</a>
-                            </li>
-                            <li>
-                                <a class="nav-link text" href="#">¡Hi name!</a>
-                            </li>
-                        </ul>
                     </div>
                 </div>
             </nav>

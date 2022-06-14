@@ -32,14 +32,14 @@ class UserServices {
     }
   }
 
-  static async getLogin(body) {
+  static async getLogin(body, user) {
     try {
       const user = await User.findOne({ email: body.email }).exec();
       if (!user) {
         return { error: true, data: "El usuario no existe" };
       }
       user.matchPassword(body.password);
-      return { error: false, data: "Usuario logueado" };
+      return { error: false, data: user /* {name: body.name, email: body.email, lastName:body.lastName, id: body._id} */ };
     } catch (error) {
       console.log(error);
       return { error: true, data: error };
