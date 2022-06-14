@@ -2,11 +2,12 @@
 /* En el archivo Sigup está fallando el registro por las validaciones */
 
 import React from 'react'
-import axios from 'axios'
+
 import useInput from '../hooks/useInput'
 import { useNavigate } from 'react-router-dom'
 import '../sass/forms.scss'
-
+import { useDispatch } from "react-redux";
+import { sendUserRegister } from "../state/userLogin";
 
 function NewUser() {
 
@@ -15,14 +16,18 @@ function NewUser() {
     const password = useInput()
     const email = useInput()
     const navigate = useNavigate()
+    const dispatch = useDispatch();
+
 
     const handlerSubmit = (e) => {
-        e.preventDefault()
-        axios.post('http://localhost:3030/user/register', ({ name: name.value, lastName: lastName.value, password: password.value, email: email.value }))
-            .then((res) => res.data)
-            .then(() => navigate('/login'))
-            .catch(error => console.log(error))
-    }
+    e.preventDefault();
+
+    dispatch(sendUserRegister({ name,lastName,email, password })); 
+
+   
+
+    navigate("/");
+  };
 
     return (
         <div className='fondo'>
