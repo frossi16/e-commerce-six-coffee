@@ -4,6 +4,7 @@ const ProductSchema = new Schema ({
     title: {
         type : String, 
         required:true,
+        trim:true
     },
     price: {
         type : Number, 

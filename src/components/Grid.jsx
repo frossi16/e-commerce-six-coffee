@@ -1,23 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Card from "../commons/Card";
-import axios from "axios";
 
+import { getAllProductRequest } from "../state/productos";
 const Grid = () => {
-  // const dispatch = useDispatch();
-  // const products = useSelector(state => state.products)
-  const [products, setProducts] = useState([]);
-  // useEffect(()=>{
-  //   dispatch(getAllProducts())
-  // },[])
+  const dispatch = useDispatch();
+
+  const products = useSelector((state) => state.productos);
 
   useEffect(() => {
-    axios.get("http://localhost:3030/products/all")
-    .then(res => res.data)
-    .then(prod => setProducts(prod));
+    dispatch(getAllProductRequest());
   }, []);
 
-  // console.log(products)
   return (
     <div className="grilla">
       {products.map((product) => {

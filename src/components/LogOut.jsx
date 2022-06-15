@@ -1,19 +1,16 @@
-import axios from "axios";
 import React from "react";
 import { useNavigate } from "react-router";
+import { useDispatch } from "react-redux";
+import { userLogOut } from "../state/userLogin";
 
 function LogOut() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handlerClickLogOut = () => {
-    axios
-      .post(`http://localhost:3030/user/logout`)
-     
-      .then(() => {
-        localStorage.removeItem("user");
-        navigate("/");
-        window.location.reload()
-      });
+    dispatch(userLogOut());
+
+    navigate("/");
   };
 
   return (

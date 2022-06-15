@@ -1,5 +1,5 @@
-.cards {
-  max-width: 20%;
+/* .cards {
+  max-width: 70% !important;
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -13,4 +13,4 @@
     max-width: 50%; }
 
 .links {
-  max-width: 20%; }
+  max-width: 20%; } */

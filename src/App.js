@@ -10,6 +10,7 @@ import { userLoged } from "./state/userLogin";
 import Grid from "./components/Grid";
 import SingleProduct from "./components/SingleProduct";
 import Shopping from "./components/Shopping";
+import Search from "./components/Search";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -34,6 +35,7 @@ const App = () => {
         <Route path="/login" element={<LogIn />} />
         <Route path="/products/:id" element={<SingleProduct />} />
         <Route path="/shopping" element={<Shopping />} />
+        <Route path="/search" element={<Search />} />
       </Routes>
       <Footer />
     </>

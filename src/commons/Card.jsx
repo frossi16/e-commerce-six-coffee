@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 const Card = ({ product }) => {
-  console.log(product);
+  
   const navigate = useNavigate();
 
   const handleClick = (id) => {
