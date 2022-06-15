@@ -23,7 +23,7 @@ class CartServices {
         return { error: true, data: "Stock no disponible" };
       }
       await Cart.create(body);
-      return { error: false, data: "se agrego al carrito" };
+      return { error: false, data: body};
     } catch (error) {
       console.log(error);
       return { error: true, data: error };

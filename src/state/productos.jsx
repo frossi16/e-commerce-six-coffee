@@ -7,6 +7,7 @@ export const getAllProductRequest = createAsyncThunk("PRODUCTOS", () => {
     .then((res) => res.data);
 });
 
+
 const productosReducer = createReducer(
     [], {
   [getAllProductRequest.fulfilled]: (state, action) => action.payload,

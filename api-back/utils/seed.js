@@ -1,5 +1,8 @@
 const Product = require('../models/Product')
 const mongoose = require('mongoose')
+const Category = require('../models/Category')
+const User = require('../models/User')
+const axios = require("axios");
 
 mongoose.connect("mongodb://localhost:27017/Six-coffe",{
     useNewUrlParser : true, useUnifiedTopology: true})
@@ -9,6 +12,9 @@ mongoose.connect("mongodb://localhost:27017/Six-coffe",{
     .catch((err)=>{
         console.log(err)
     })
+
+const categories = [{categoryName:"Molido"},{categoryName:"Grano"}]
+// const superAdmin = [{name:"ADMIN",lastName:"ADMIN",password:"1234",email:"admin@gmail.com",admin:true}]
 
 const products =[
     {
@@ -99,5 +105,9 @@ const products =[
 const seedDb = async () =>{
     await Product.deleteMany()
     await Product.insertMany(products)
+    await Category.deleteMany()
+    await Category.insertMany(categories);
+    await axios.post('http://localhost:3030/user/register',{name:"ADMIN",lastName:"ADMIN",password:"1234",email:"admin@gmail.com",admin:true})
 }
+
 seedDb()

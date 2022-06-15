@@ -15,7 +15,7 @@ export const sendLoginRequest = createAsyncThunk( "LOGIN",
 
         localStorage.setItem(
           "user",
-          JSON.stringify({ id: user._id, name: user.name })
+          JSON.stringify({ _id: user._id, name: user.name,admin:user.admin })
         );
 
         return user;

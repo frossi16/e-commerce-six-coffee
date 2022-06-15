@@ -1,37 +1,36 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import axios from "axios";
 import CommentCard from "../commons/CommentCard";
 import Puntuacion from "./Puntuacion";
 import AddComment from "../commons/AddComment";
+import { getSingleProduct } from "../state/singleProduct";
+import { useDispatch,useSelector } from "react-redux";
+import { getReviews } from "../state/reviews";
+import { addToCart } from "../state/cart";
 
 const SingleProduct = () => {
   const params = useParams();
   const clearId = params.id.slice(0, params.id.length - 1);
-  const [product, setProduct] = useState({});
+  const product = useSelector(state=>state.singleProduct);
+  const user = useSelector(state=>state.userLogin)
 
-  const [peopleComments, setComments] = useState([]);
+  const peopleComments = useSelector(state=>state.reviews)
+  console.log(peopleComments)
   const sumatoria = peopleComments.reduce((acc, comment) => {
     return (acc += comment.puntuation);
   }, 0);
-
   const promedio = sumatoria / peopleComments.length;
-
   const [units, setUnits] = useState(1);
+  const dispatch = useDispatch();
+
+  const handleCarrito = (productId, userId,units) => {
+    dispatch(addToCart({productId:productId,idUser:userId,cant:units}))
+  };
 
   useEffect(() => {
-    axios
-      .get(`http://localhost:3030/products/${clearId}`)
-      .then((res) => res.data)
-      .then((prod) => setProduct(prod))
-      .catch((err) => console.log(err));
-
-    axios
-      .get(`http://localhost:3030/products/${clearId}/reviews`)
-      .then((res) => res.data)
-      .then((coms) => setComments(coms))
-      .catch((err) => console.log(err));
-  }, []);
+    dispatch(getSingleProduct(clearId));
+    dispatch(getReviews(clearId));
+  }, [peopleComments.length]);
 
   return (
     <div className="row cols py-5 ">
@@ -70,9 +69,9 @@ const SingleProduct = () => {
                 <div>{units}</div>
               </div>
               <div className="col-5 d-flex justify-content-start">
-                {/* hacer el disabled del stock total de la pagina */}
                 <button
                   className=" btn btn-danger stockButton"
+                  disabled={units === product.stock}
                   onClick={() => {
                     setUnits(units + 1);
                   }}
@@ -84,7 +83,7 @@ const SingleProduct = () => {
           </div>
           <div className="col-8 d-flex justify-content-start">
             {/* falta agregar con las rutas del carrito */}
-            <button className="cartButton btn btn-danger ">
+            <button onClick={()=>{handleCarrito(product._id,user._id,units)}} className="cartButton btn btn-danger ">
               Agregar al carrito
             </button>
           </div>

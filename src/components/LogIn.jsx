@@ -52,7 +52,7 @@ function NewUser() {
     return (
         <>
             <form className="form" onSubmit={handlerSubmit}>
-                <h1 class='text-dark'>Log in</h1>
+                <h1 className='text-danger' font-weight='bold'>Log in</h1>
                 <div class="mb-3">
                     <input type="email" class="form-control input" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder='example@email.com' {...email} />
                 </div>

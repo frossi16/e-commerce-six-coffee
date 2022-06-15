@@ -6,6 +6,7 @@ const carritoCompra = require("./ventas"); // reedirijo la ruta al controller{ma
 const Historials = require("../models/Historial");
 const CarritoPosta = require("../models/CarritoPosta.js");
 const RoutersVentas = require('./ventas')
+const categoryRouter = require("./category")
 // prueba de confirmacion de venta del historial {maxi}
 // appRoutes.post("/prueba/:id", async (req, res) => {
 //   const carrito = await CarritoPosta.find({idUser:req.params.id})
@@ -23,6 +24,7 @@ const RoutersVentas = require('./ventas')
 
 appRoutes.use("/carrito", carritoCompra);
 appRoutes.use("/user", user);
+appRoutes.use("/category", categoryRouter);
 
 appRoutes.use("/products", productsRouter);
 appRoutes.use("/ventas", RoutersVentas);

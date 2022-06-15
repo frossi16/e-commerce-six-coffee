@@ -1,25 +1,34 @@
 import React, { useState } from "react";
 import axios from "axios"
 import useInput from "../hooks/useInput";
+import { addReviews } from "../state/reviews";
+import {useSelector,useDispatch} from "react-redux"
 
 const AddComment = ({clearId}) => {
     const [puntuation, setPuntuation] = useState(null);
-    const comment = useInput("");
+    const comment = useInput("")
+    const dispatch = useDispatch();
+    const user = useSelector(state=>state.userLogin)
 
     const commentSubmit = (e) => {
         e.preventDefault();
-        axios
-          .post(`http://localhost:3030/products/${clearId}/reviews`, {
-            comment: comment.value,
-            productId: clearId,
-            puntuation: puntuation,
-          })
-          .then((res) => console.log(res))
-          .catch((err) => console.log(err));
+        // axios
+        //   .post(`http://localhost:3030/products/${clearId}/reviews`, {
+        //     comment: comment.value,
+        //     productId: clearId,
+        //     puntuation: puntuation,
+        //   })
+        //   .then((res) => console.log(res))
+        //   .catch((err) => console.log(err));
+        dispatch(addReviews({
+          comment: comment.value,
+          productId: clearId,
+          puntuation: puntuation,
+        }))
       };
 
-// validar si esta logeado o no
-  return (
+      return  user._id ?
+   (
     <>
       <p><strong>Agregar comentarios</strong></p>
       <form className="row" onSubmit={commentSubmit}>
@@ -56,7 +65,8 @@ const AddComment = ({clearId}) => {
         </label>
       </form>
     </>
-  );
+  ):null;
+  
 };
 
 export default AddComment;

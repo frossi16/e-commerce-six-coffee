@@ -10,6 +10,11 @@ import { userLoged } from "./state/userLogin";
 import Grid from "./components/Grid";
 import SingleProduct from "./components/SingleProduct";
 import Shopping from "./components/Shopping";
+import AdminCategories from "./components/AdminCategories";
+import AdminUsers from "./components/AdminUsers";
+import AdminProducts from "./components/AdminProducts";
+import Error from "./components/Error";
+import UserOrders from "./components/UserOrders";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -34,6 +39,18 @@ const App = () => {
         <Route path="/login" element={<LogIn />} />
         <Route path="/products/:id" element={<SingleProduct />} />
         <Route path="/shopping" element={<Shopping />} />
+        <Route path="/category/:category" element={<Grid />} />
+        <Route path="/admin/users" element={<AdminCategories />} />
+        <Route path="/admin/categories" element={<AdminUsers />} />
+        <Route path="/admin/products" element={<AdminProducts />} />
+        <Route path="/404" element={<Error />} />
+        <Route path="/*" element={<Error />} />
+        <Route path="/orders" element={<UserOrders />} />
+
+
+
+
+
       </Routes>
       <Footer />
     </>
