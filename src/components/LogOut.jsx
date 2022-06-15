@@ -1,5 +1,6 @@
 import axios from "axios";
 import React from "react";
+import { BsPersonX } from 'react-icons/bs'
 import { useNavigate } from "react-router";
 
 function LogOut() {
@@ -8,7 +9,7 @@ function LogOut() {
   const handlerClickLogOut = () => {
     axios
       .post(`http://localhost:3030/user/logout`)
-     
+
       .then(() => {
         localStorage.removeItem("user");
         navigate("/");
@@ -17,9 +18,10 @@ function LogOut() {
   };
 
   return (
-    <button type="button" onClick={handlerClickLogOut}>
-      LogOut
-    </button>
+    /*  <button type="button" >
+       LogOut
+     </button> */
+    <button type="button" className="btn btn-danger" onClick={handlerClickLogOut}><BsPersonX /></button>
   );
 }
 export default LogOut;

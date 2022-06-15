@@ -25,9 +25,9 @@ const Navbar = () => {
   // const userDB = useSelector((state) => state.userDB);
   // const productosDB = useSelector((state) => state.productos);
   // const ventas = useSelector((state) => state.ventas);
- 
 
-   //console.log(ventas)
+
+  //console.log(ventas)
 
 
 
@@ -130,14 +130,13 @@ const Navbar = () => {
                   </Link>
                 </li>
               </ul>
-
-              <LogOut/>
+              <LogOut />
             </div>
 
             <div className="carrito  ms-auto d-flex">
               {" "}
               <Link to={"/shopping"}>
-                <button type="button" className="btn btn-danger btn-search ">
+                <button type="button" className="btn btn-danger">
                   <AiOutlineShoppingCart />
                 </button>
               </Link>
@@ -150,12 +149,12 @@ const Navbar = () => {
         <div className="container-fluid">
           <div className="container">
             <ul className="nav justify-content-end">
-              <li>{!user.name ? <h2>Not Login</h2> : <h2>Hola {user.name}!</h2>}</li>
+              <li>{!user.name ? <h5 className="text">Not Login</h5> : <h5 className="text">Hola {user.name}!</h5>}</li>
             </ul>
           </div>
         </div>
-      </nav>
-    </div>
+      </nav >
+    </div >
   );
 };
 

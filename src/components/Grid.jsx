@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Card from "../commons/Card";
 import axios from "axios";
+import header from '../assets/headerProductos.jpg'
 
 const Grid = () => {
   // const dispatch = useDispatch();
@@ -19,11 +20,17 @@ const Grid = () => {
 
   // console.log(products)
   return (
+    <>
+     <div className='text-bg-light'>
+      <img src={header} className='rounded mx-auto d-block' alt="..."/>
+      </div>
+      
     <div className="grilla">
       {products.map((product) => {
         return <Card product={product} />;
       })}
     </div>
+    </>
   );
 };
 
