@@ -31,9 +31,9 @@ const Navbar = () => {
   // const userDB = useSelector((state) => state.userDB);
   // const productosDB = useSelector((state) => state.productos);
   // const ventas = useSelector((state) => state.ventas);
- 
 
-   //console.log(ventas)
+
+  //console.log(ventas)
 
   useEffect(()=>{
     dispatch(getCategories())
@@ -149,6 +149,7 @@ const Navbar = () => {
                         </Link>
                       </div>
                     </div>
+
         </div>
       </nav>
 
@@ -156,7 +157,7 @@ const Navbar = () => {
         <div className="container-fluid">
           <div className="container">
             <ul className="nav justify-content-end">
-              <li>{!user.name ? <h2>Not Login</h2> : <h2>Hola {user.name}!</h2>}</li>
+              <li>{!user.name ? <h5 className="text">Not Login</h5> : <h5 className="text">Hola {user.name}!</h5>}</li>
             </ul>
           </div>
         </div>

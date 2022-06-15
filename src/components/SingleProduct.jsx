@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
+import { BsPlus } from 'react-icons/bs'
+import { BiMinus } from 'react-icons/bi'
+import axios from "axios";
 import CommentCard from "../commons/CommentCard";
 import Puntuacion from "./Puntuacion";
 import AddComment from "../commons/AddComment";
@@ -62,7 +65,7 @@ const SingleProduct = () => {
                     setUnits(units - 1);
                   }}
                 >
-                  -
+                  <BiMinus />
                 </button>
               </div>
               <div className="col-2 d-flex justify-content-center">
@@ -76,7 +79,7 @@ const SingleProduct = () => {
                     setUnits(units + 1);
                   }}
                 >
-                  +
+                  <BsPlus />
                 </button>
               </div>
             </div>

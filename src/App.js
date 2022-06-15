@@ -15,6 +15,7 @@ import AdminUsers from "./components/AdminUsers";
 import AdminProducts from "./components/AdminProducts";
 import Error from "./components/Error";
 import UserOrders from "./components/UserOrders";
+import Endpoint from './components/Endpoiont'
 
 const App = () => {
   const dispatch = useDispatch();
@@ -46,11 +47,7 @@ const App = () => {
         <Route path="/404" element={<Error />} />
         <Route path="/*" element={<Error />} />
         <Route path="/orders" element={<UserOrders />} />
-
-
-
-
-
+        <Route path='/finish' element={<Endpoint />} />
       </Routes>
       <Footer />
     </>

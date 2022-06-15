@@ -4,6 +4,7 @@ import Card from "../commons/Card";
 import { getAllProductRequest } from "../state/productos";
 import { useParams } from "react-router";
 import { getProductsByCateory } from "../state/productByCategory";
+import header from '../assets/headerProductos.jpg'
 
 const Grid = () => {
   const dispatch = useDispatch();
@@ -39,15 +40,17 @@ const Grid = () => {
   )
   : (
     <>
-    <h2  className="grilla m-0 py-5 px-5"><strong>TODOS LOS PRODUCTOS</strong></h2>
-
+    
+     <div className='text-bg-light'>
+      <img src={header} className='rounded mx-auto d-block' alt="..."/>
+      </div>
+      <h2  className="grilla m-0 py-5 px-5"><strong>TODOS LOS PRODUCTOS</strong></h2>
     <div className="grilla">
       {products.map((product) => {
         return <Card key={product._id} product={product} />;
       })}
     </div>
     </>
-
   );
 };
 
