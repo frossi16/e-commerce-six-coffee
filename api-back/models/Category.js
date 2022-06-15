@@ -4,7 +4,11 @@ const CategorySchema = new Schema ({
     categoryName: {
         type : String, 
         required:true,
-    },    
+    },
+    idProduct : {
+        type: String,
+        required: true,
+    }    
 })
 
 module.exports = model("Category",CategorySchema)

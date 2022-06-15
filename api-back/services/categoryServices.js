@@ -20,6 +20,34 @@ class categoryServices {
     }
   }
 
+  static async addCategory(body){
+    console.log(body)
+    try{
+      await Category.create(body)
+      return {error:false, data:body}
+    } catch(error){
+      console.log(error + ' error de add category')
+      return {error: true, data: error}
+    }
+  }
+
+  static async updateOne(id, body){
+    try{
+      await Category.findByIdAndUpdate(id, body)
+      return {
+        error: false,
+        data: "category updated"
+      }
+    }catch(error){
+      console.log(error + " error de update category")
+      return {
+        error: true,
+        data: "error 404: category not found, changes couldn't be made"
+      }
+    }
+  }
 }
+
+
 
 module.exports = categoryServices;
