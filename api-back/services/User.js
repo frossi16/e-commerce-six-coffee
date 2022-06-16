@@ -39,7 +39,7 @@ class UserServices {
         return { error: true, data: "El usuario no existe" };
       }
       user.matchPassword(body.password);
-      return { error: false, data: user /* {name: body.name, email: body.email, lastName:body.lastName, id: body._id} */ };
+      return { error: false, data: user };
     } catch (error) {
       console.log(error);
       return { error: true, data: error };

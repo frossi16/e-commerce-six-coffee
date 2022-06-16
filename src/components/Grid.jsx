@@ -12,7 +12,7 @@ const Grid = () => {
   // },[])
 
   useEffect(() => {
-    axios.get("http://localhost:3030/products")
+    axios.get("http://localhost:3030/products/all")
     .then(res => res.data)
     .then(prod => setProducts(prod));
   }, []);

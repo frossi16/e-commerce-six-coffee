@@ -14,8 +14,6 @@ const CarritoSchema = new Schema({
   },
 
 
-  // imagen de referencia {maxi}
-
   nameProducto: {
     type: String,
     required: true,

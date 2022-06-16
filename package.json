@@ -19,7 +19,9 @@
     "express-session": "^1.17.3",
     "mongodb": "^4.6.0",
     "mongoose": "^6.3.6",
+    "nodemailer": "^6.7.5",
     "passport": "^0.6.0",
+    "passport-google-oauth20": "^2.0.0",
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^7.1.2",
     "react": "^18.1.0",
@@ -36,16 +38,10 @@
     "volleyball": "^1.5.1",
     "web-vitals": "^2.1.4"
   },
-
-<<<<<<< HEAD
-  "proxy": "http://localhost:3030/",
-
-=======
->>>>>>> origin/seedDb
   "scripts": {
     "start": "concurrently 'npm run server' 'npm run client'",
     "server": "nodemon api-back/server.js",
-    "seed" : "node api-back/utils/seed.js",
+    "seed": "node api-back/utils/seed.js",
     "client": "react-scripts start",
     "build": "react-scripts build",
     "build-css": "node-sass -w src/sass/first.scss -o src/css/",
