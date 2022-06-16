@@ -24,7 +24,7 @@ const AdminCategories = () => {
 
 
   return user && user.admin ? (
-      <div className='row grilla p-5 m-0'>
+      <div className='row grilla2 p-5 m-0'>
       <h2 className='mb-3'><strong>Administrar Categorías</strong></h2>
 
       <div className='col-6'>

@@ -229,14 +229,6 @@ a {
 .comm-punt {
   width: 100px;
 }
-
-.grilla {
-  /* background-color: white;
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%; }
-<<<<<<< HEAD
-
 .navPosition{
   z-index: 3000;
 }
@@ -253,6 +245,18 @@ a {
   background-color: white;
 }
 
+.grilla2{
+   background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.grilla {
+  /* background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%; }
 =======
   width: 100%; */
 

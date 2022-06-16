@@ -7,7 +7,7 @@ const CarritoSchema = new Schema({
     required: true,
   },
 
-  idProduct: {
+  idProducto: {
     type: String,
     required: true,
   },

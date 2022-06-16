@@ -65,6 +65,7 @@ class CartServices {
       });
       return { error: false, data: "Se elimino del carrito" };
     } catch (error) {
+
       return { error: true, data: error };
     }
   }

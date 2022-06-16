@@ -11,7 +11,6 @@ class CartRoutes {
   }
 
   static async addItemCar(req, res) {
-
     const { error, data } = await CartServices.addItemCar(req.body);
     if (error) {
       return res.status(401).send(data);
