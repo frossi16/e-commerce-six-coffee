@@ -1,12 +1,14 @@
-import React, {useEffect} from "react";
+import React, { useEffect, useState } from "react";
+import axios from 'axios'
 import { BsSearch, BsPerson } from "react-icons/bs";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import logo from "../assets/Logo.png";
-import { useSelector,useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import LogOut from "./LogOut";
 import Categories from "./Categories"
 import { getCategories } from "../state/categories";
+import { getAllItemsRequest } from '../state/itemsCarrito'
 import Orders from "./Orders";
 import MenuAdmin from "./MenuAdmin";
 import { getAllUserRequest } from "../state/userDB";
@@ -17,29 +19,21 @@ import capitalLetter from "../utils/capitalLetter";
 
 
 const Navbar = () => {
-  /* Sabri: */
-  /* Los tag a van a ser reemplazados por Link en futuro */
-  /* Seguro haya que ajustar las cosas por el contador del carrito */
+
 
   const navigate = useNavigate();
   const search = useInput();
 
-  //LLAMADOS A TODOS LOS REDUCERS
   const user = useSelector((state) => state.userLogin);
-
   const categories = useSelector((state)=>state.categories)
   const dispatch = useDispatch();
-  // const userDB = useSelector((state) => state.userDB);
-  // const productosDB = useSelector((state) => state.productos);
-  // const ventas = useSelector((state) => state.ventas);
+ 
 
-
-  //console.log(ventas)
-
-  useEffect(()=>{
+  useEffect(() => {
     dispatch(getCategories())
     dispatch(getAllUserRequest())
   },[])
+
 
 
 
@@ -108,6 +102,7 @@ const Navbar = () => {
                 className="d-flex  search"
                 role="search"
               >
+
                 <input
                   className="form-control me-2 input-search"
                   type="search"
@@ -120,7 +115,6 @@ const Navbar = () => {
                 </button>
               </form>
             </div>
-
                       {/* <div className="container md-auto">
                         <form className="d-flex  search" role="search">
                           <input
@@ -177,7 +171,6 @@ const Navbar = () => {
                       </div>
                     </div>
                     </div>
-        
       </nav>
 
       {/* <nav className="navbar navbar-expand-md ">
@@ -302,7 +295,7 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-  </div>
+    </div>
   );
 };
 

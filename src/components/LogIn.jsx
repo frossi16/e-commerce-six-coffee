@@ -1,9 +1,9 @@
 import React from "react";
-
 import useInput from "../hooks/useInput";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { sendLoginRequest } from "../state/userLogin";
+
 
 function NewUser() {
 
@@ -17,6 +17,7 @@ function NewUser() {
         dispatch(sendLoginRequest({ email, password })); 
         navigate("/");
       };
+
 
     return (
         <>
