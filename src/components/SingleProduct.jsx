@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { BsPlus } from 'react-icons/bs'
 import { BiMinus } from 'react-icons/bi'
-import axios from "axios";
 import CommentCard from "../commons/CommentCard";
 import Puntuacion from "./Puntuacion";
 import AddComment from "../commons/AddComment";

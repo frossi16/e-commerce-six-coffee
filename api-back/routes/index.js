@@ -25,7 +25,6 @@ const categoryRouter = require("./category")
 appRoutes.use("/carrito", carritoCompra);
 appRoutes.use("/user", user);
 appRoutes.use("/category", categoryRouter);
-
 appRoutes.use("/products", productsRouter);
 appRoutes.use("/ventas", RoutersVentas);
 
