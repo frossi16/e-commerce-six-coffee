@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 const express = require("express");
 const router = express.Router();
 const CategoryController = require("../controllers/categoryControllers");
+=======
+const express = require('express')
+const CategoryController = require("../controllers/categoryControllers");
+const router = express.Router();
+>>>>>>> origin/categories2
 
 
 router.get("/", CategoryController.getAll);

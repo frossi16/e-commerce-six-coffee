@@ -15,5 +15,6 @@ appRoutes.use("/products", productsRouter);
 appRoutes.use("/historial", HistorialRoutes);
 appRoutes.use('/aouth',aouthRoute)
 appRoutes.use("/ventas", RoutersVentas);
+appRoutes.use("/historial", HistorialRoutes);
 
 module.exports = appRoutes;

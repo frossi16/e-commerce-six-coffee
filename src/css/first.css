@@ -198,8 +198,7 @@ a {
 }
 
 .viewImg {
-  max-width: 40%;
-  }
+  width: 40%; }
 
 
 .cardButton {
@@ -236,6 +235,7 @@ a {
   display: flex;
   flex-wrap: wrap;
   width: 100%; }
+<<<<<<< HEAD
 
 .navPosition{
   z-index: 3000;

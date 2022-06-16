@@ -8,7 +8,6 @@ export const getReviews = createAsyncThunk("GET_REVIEWS",(value) => {
 });
 
 export const addReviews = createAsyncThunk("ADD_REVIEWS",(value) => {
- 
     return axios
       .post(`http://localhost:3030/products/${value}/reviews`,{
             comment: value.comment,

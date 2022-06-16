@@ -14,26 +14,35 @@ const VentaSchema = new Schema({
       required: true,
       trim: true,
     },
-  },
-// imagen de referencia {maxi}
-  producto: {
-    name: {
+    
+    id:{
       type: String,
       required: true,
       trim: true,
-    },
-
-    price: {
-      type: Number,
-      required: true,
-      trim: true,
-    },
-    cant: {
-      type: Number,
-      required: true,
-      trim: true,
-    },
+    }
   },
+// imagen de referencia {maxi}
+  productoComprados:{
+    type: Object,
+      producto: {
+        name: {
+          type: String,
+          required: true,
+          trim: true,
+        },
+    
+        price: {
+          type: Number,
+          required: true,
+          trim: true,
+        },
+        cant: {
+          type: Number,
+          required: true,
+          trim: true,
+        },
+      },
+  }
 });
 
 const Venta = mongoose.model("Venta", VentaSchema);

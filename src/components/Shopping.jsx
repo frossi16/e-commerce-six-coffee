@@ -1,3 +1,4 @@
+
 import React, { useEffect, Navigate } from 'react'
 import { AiOutlineShoppingCart } from 'react-icons/ai'
 import { BsCurrencyDollar } from 'react-icons/bs'
@@ -11,11 +12,14 @@ import { updateCart } from '../state/cart'
 
 
 
+
 const Shopping = () => {
+
 
 
     const dispatch = useDispatch()
     const navigate = useNavigate()
+
     const carrito = useSelector(state => state.cart)
     const user = JSON.parse(localStorage.getItem('user'))
 
@@ -34,6 +38,7 @@ const Shopping = () => {
     }
 
 
+
     return (
         <div class="text-bg-light p-3">
             <div>
@@ -47,7 +52,6 @@ const Shopping = () => {
                     <div className="col-3 container-col-">
                         <div className="box">
                             <h4>Precio</h4>
-
                         </div>
                     </div>
                     <div className="col-3 container-col">

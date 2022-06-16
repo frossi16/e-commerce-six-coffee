@@ -5,7 +5,6 @@ const transportador = require("../passport/Nodemail");
 
 class HistoryService {
   static async getAll(id) {
-    console.log("esto es el ",id)
     try {
       const userEmail = await User.findById({_id: id });
       const carrito = await Carrito.find({ idUser: id });
@@ -19,7 +18,6 @@ class HistoryService {
       });
       return { error: false, data: "Se realizo el historial" };
     } catch (error) {
-      console.log("error",error);
       return { error: true, data: error };
     }
   }

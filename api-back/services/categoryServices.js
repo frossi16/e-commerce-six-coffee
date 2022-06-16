@@ -23,8 +23,10 @@ class categoryServices {
   static async createCategory(body) {
     try {
       await Category.create(body);
+
       let result = await Category.find(body)
       return { error: false, data: result };
+
     } catch (error) {
       console.log(error);
       return { error: true, data: error };

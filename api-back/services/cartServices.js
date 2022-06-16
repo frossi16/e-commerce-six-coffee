@@ -39,7 +39,7 @@ class CartServices {
         }
       }
       await Cart.create(body);
-      return { error: false, data: body};
+      return { error: false, data: "se agrego al carrito" };
     } catch (error) {
       return { error: true, data: error };
     }
@@ -65,6 +65,31 @@ class CartServices {
       });
       return { error: false, data: "Se elimino del carrito" };
     } catch (error) {
+      return { error: true, data: error };
+    }
+  }
+
+  static async getUpdate(body) {
+    try {
+      await Cart.findOneAndUpdate(
+        { idUser: body.idUser, idProducto: body.idProducto },
+        { cant: body.cant }
+      );
+      return { error: false, data: "Carrito actualizado" };
+    } catch (error) {
+      return { error: true, data: error };
+    }
+  }
+
+  static async getRemove(body) {
+    try {
+      await Cart.findOneAndDelete({
+        idUser: body.idUser,
+        idProducto: body.idProducto,
+      });
+      return { error: false, data: "Se elimino del carrito" };
+    } catch (error) {
+
       return { error: true, data: error };
     }
   }

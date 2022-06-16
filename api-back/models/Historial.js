@@ -6,9 +6,13 @@ const HistorialSchema = new Schema({
     type: String,
     required: true,
   },
-  venta: {
-    type: Object,
-  },
+  // venta: {
+  //   type: Object,
+  // },
+    venta:{
+        type:[Object],
+        default: undefined,
+    }
 });
 
 const Historial = mongoose.model("historial", HistorialSchema);
