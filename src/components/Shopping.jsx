@@ -33,9 +33,9 @@ const Shopping = () => {
     let precioCant = carrito.map((items) => items.price * items.cant)
     let total = precioCant.reduce((acc, e) => acc + e, 0)
 
-    if (!user) {
-        Navigate('/')
-    }
+    // if (!user) {
+    //     Navigate('/')
+    // }
 
 
 

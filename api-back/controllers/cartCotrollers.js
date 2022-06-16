@@ -5,7 +5,7 @@ class CartRoutes {
   static async getItem(req, res) {
     const { error, data } = await CartServices.getItem(req.params.id);
     if (error) {
-      return res.status(401).send(data);
+      return res.status(401).send(error);
     }
     res.status(200).send(data);
   }
@@ -13,7 +13,7 @@ class CartRoutes {
   static async addItemCar(req, res) {
     const { error, data } = await CartServices.addItemCar(req.body);
     if (error) {
-      return res.status(401).send(data);
+      return res.status(401).send(error);
     }
     return res.status(201).send(data);
   }
@@ -24,15 +24,16 @@ class CartRoutes {
       // req.params.id
     );
     if (error) {
-      return res.status(401).send(data);
+      return res.status(401).send(error);
     }
     return res.status(201).send(data);
   }
 
   static async getRemove(req, res) {
-    const { error, data } = await CartServices.getRemove(req.body);
+    const { error, data } = await CartServices.getRemove(req.params);
+    console.log(error, '   err', data)
     if (error) {
-      return res.status(401).send(data);
+      return res.status(401).send(error);
     }
     return res.status(201).send(data);
   }

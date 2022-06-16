@@ -3,12 +3,12 @@ import { BsPlus } from 'react-icons/bs'
 import { BiMinus } from 'react-icons/bi'
 import { addToCart } from "../state/cart";
 import { useDispatch,useSelector } from 'react-redux';
-
+import { useNavigate } from 'react-router-dom';
 
 const ButtonSingleView = () => {
-      
+  const navigate=useNavigate()
   const [units, setUnits] = useState(1);
-  const user = useSelector(state=>state.userLogin)
+  const user = JSON.parse(localStorage.getItem("user"))
   const product = useSelector(state=>state.singleProduct);
   const dispatch = useDispatch()
 
@@ -49,7 +49,11 @@ const ButtonSingleView = () => {
       </div>
     </div>
     <div className="col-8 d-flex justify-content-start">
-      <button onClick={()=>{handleCarrito(product._id,user._id,units)}} className="cartButton btn btn-danger ">
+      <button onClick={()=>{
+        if(!user)
+          {navigate('/login')}
+        else{
+        handleCarrito(product._id,user._id,units)}}} className="cartButton btn btn-danger ">
         Agregar al carrito
       </button>
     </div>

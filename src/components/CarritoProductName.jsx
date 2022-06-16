@@ -1,15 +1,24 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BsCurrencyDollar } from "react-icons/bs";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { BsPlus } from "react-icons/bs";
 import { BiMinus } from "react-icons/bi";
 import { useDispatch } from "react-redux";
-import { updateCart } from "../state/cart";
+import { deleteCart, getCart, updateCart } from "../state/cart";
 
 const CarritoProductName = ({ items }) => {
   const dispatch = useDispatch();
   const [units, setUnits] = useState(items.cant);
   const user = JSON.parse(localStorage.getItem("user"));
+
+  useEffect(()=>{
+    
+  },[])
+
+  const handleDelete = () => {
+    dispatch(deleteCart({ idProducto: items.idProducto,
+      idUser: user._id}))
+  }
 
   const onClick = (operador) => {
     operador === "+"
@@ -78,7 +87,7 @@ const CarritoProductName = ({ items }) => {
                 <BsPlus />
               </button>
               {/* delete */}
-              <button type="button" className="btn btn-danger">
+              <button type="button" onClick = {handleDelete}className="btn btn-danger">
                 <RiDeleteBin6Line />
               </button>
             </div>

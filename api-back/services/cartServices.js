@@ -35,11 +35,11 @@ class CartServices {
         if (produCart[0].cant > producto[0].stock) {
           return { error: true, data: "Stock no disponible" };
         } else {
-          return { error: false, data: "se agrego al carrito" };
+          return { error: false, data: body };
         }
       }
       await Cart.create(body);
-      return { error: false, data: "se agrego al carrito" };
+      return { error: false, data: body };
     } catch (error) {
       return { error: true, data: error };
     }
@@ -57,19 +57,19 @@ class CartServices {
     }
   }
 
-  static async getRemove(body) {
+  static async getRemove(params) {
     try {
-      await Cart.findOneAndDelete({
-        idUser: body.idUser,
-        idProducto: body.idProducto,
-      });
+      await Cart.findOneAndDelete(
+        {
+          idUser: params.idUser,
+          idProducto: params.idProduct,
+        }
+      );
       return { error: false, data: "Se elimino del carrito" };
     } catch (error) {
-
       return { error: true, data: error };
     }
   }
-
 }
 
 module.exports = CartServices;

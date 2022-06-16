@@ -6,7 +6,7 @@ const RoutersVentas = require("../controllers/ventaControllers");
 router.get("/:id", CartRoutes.getItem);
 router.post("/add", CartRoutes.addItemCar);
 router.put("/", CartRoutes.getUpdate);
-router.delete("/removeItem", CartRoutes.getRemove);
+router.delete("/removeItem/:idProduct/:idUser", CartRoutes.getRemove);
 
 // router.get("/all", RoutersVentas.getAll);
 
