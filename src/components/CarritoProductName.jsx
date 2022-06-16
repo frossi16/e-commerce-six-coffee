@@ -1,10 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import { BsCurrencyDollar } from "react-icons/bs";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { BsPlus } from "react-icons/bs";
 import { BiMinus } from "react-icons/bi";
+import { useDispatch } from "react-redux";
+import { updateCart } from "../state/cart";
 
 const CarritoProductName = ({ items }) => {
+  const dispatch = useDispatch();
+  const [units, setUnits] = useState(items.cant);
+  const user = JSON.parse(localStorage.getItem("user"));
+
+  const onClick = (operador) => {
+    operador === "+"
+      ? dispatch(
+          updateCart({
+            idProducto: items.idProducto,
+            idUser: user._id,
+            cant: units + 1,
+          })
+        )
+      : dispatch(
+          updateCart({
+            idProducto: items.idProducto,
+            idUser: user._id,
+            cant: units - 1,
+          })
+        );
+  };
+
   return (
     <div>
       <div className="row container-col">
@@ -25,15 +49,35 @@ const CarritoProductName = ({ items }) => {
         <div className="col-3 container-col">
           <div className="box">
             <div className="btn-group" role="group" aria-label="Basic example">
-              <button type="button" className="btn btn-danger">
+              {/* resta */}
+              <button
+                disabled={units === 1}
+                onClick={() => {
+                  setUnits(units - 1);
+                  onClick("-");
+                }}
+                type="button"
+                className="btn btn-danger"
+              >
                 <BiMinus />
               </button>
+              {/* cantidad */}
               <button type="number" className="btn">
-                {items.cant}
+                {units}
               </button>
-              <button type="button" className="btn btn-danger">
+              {/* suma */}
+              <button
+                disabled={units === items.stock}
+                onClick={() => {
+                  setUnits(units + 1);
+                  onClick("+");
+                }}
+                type="button"
+                className="btn btn-danger"
+              >
                 <BsPlus />
               </button>
+              {/* delete */}
               <button type="button" className="btn btn-danger">
                 <RiDeleteBin6Line />
               </button>
@@ -43,7 +87,7 @@ const CarritoProductName = ({ items }) => {
         <div className="col container-col">
           <div className="box">
             <BsCurrencyDollar />
-            {items.cant * items.price}
+            {units * items.price}
           </div>
         </div>
       </div>

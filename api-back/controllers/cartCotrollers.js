@@ -21,7 +21,7 @@ class CartRoutes {
   static async getUpdate(req, res) {
     const { error, data } = await CartServices.getUpdate(
       req.body,
-      req.params.id
+      // req.params.id
     );
     if (error) {
       return res.status(401).send(data);

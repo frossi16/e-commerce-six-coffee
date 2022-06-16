@@ -27,7 +27,7 @@ const Shopping = () => {
         dispatch(getCart(user._id))
         /* dispatch(deleteCart()) */
     }, [])
-    console.log('CARRITO SHOPPING', carrito)
+
 
     /* Hago un filter de las cantidades y lo precios para calcular el total */
     let precioCant = carrito.map((items) => items.price * items.cant)
@@ -84,6 +84,7 @@ const Shopping = () => {
                         <hr />
                         <h3>TOTAL
                             <BsCurrencyDollar />{total}</h3>
+
                     </div>
                 </div>
             </div>
