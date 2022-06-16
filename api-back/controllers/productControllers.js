@@ -39,6 +39,7 @@ class ProductController {
   }
 
   static async addOne(req, res) {
+    console.log(req.body)
     const { error, data } = await ProductServices.addOne(req.body);
 
     if (error) {

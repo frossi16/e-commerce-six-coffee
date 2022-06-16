@@ -1,21 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect} from "react";
 import { useParams } from "react-router";
-import { BsPlus } from 'react-icons/bs'
-import { BiMinus } from 'react-icons/bi'
-import axios from "axios";
 import CommentCard from "../commons/CommentCard";
 import Puntuacion from "./Puntuacion";
 import AddComment from "../commons/AddComment";
 import { getSingleProduct } from "../state/singleProduct";
 import { useDispatch,useSelector } from "react-redux";
 import { getReviews } from "../state/reviews";
-import { addToCart } from "../state/cart";
+import ButtonSingleView from "./ButtonSingleView";
 
 const SingleProduct = () => {
   const params = useParams();
   const clearId = params.id.slice(0, params.id.length - 1);
   const product = useSelector(state=>state.singleProduct);
-  const user = useSelector(state=>state.userLogin)
 
   const peopleComments = useSelector(state=>state.reviews)
   console.log(peopleComments)
@@ -23,12 +19,8 @@ const SingleProduct = () => {
     return (acc += comment.puntuation);
   }, 0);
   const promedio = sumatoria / peopleComments.length;
-  const [units, setUnits] = useState(1);
   const dispatch = useDispatch();
 
-  const handleCarrito = (productId, userId,units) => {
-    dispatch(addToCart({productId:productId,idUser:userId,cant:units}))
-  };
 
   useEffect(() => {
     dispatch(getSingleProduct(clearId));
@@ -54,43 +46,7 @@ const SingleProduct = () => {
         <p>{product.description}</p>
         <Puntuacion promedio={promedio} />
         <h3 className="">${product.price}</h3>
-        <div className="row">
-          <div className="col-4">
-            <div className="row">
-              <div className="col-5 d-flex justify-content-end">
-                <button
-                  className="btn btn-danger stockButton"
-                  disabled={units === 1}
-                  onClick={() => {
-                    setUnits(units - 1);
-                  }}
-                >
-                  <BiMinus />
-                </button>
-              </div>
-              <div className="col-2 d-flex justify-content-center">
-                <div>{units}</div>
-              </div>
-              <div className="col-5 d-flex justify-content-start">
-                <button
-                  className=" btn btn-danger stockButton"
-                  disabled={units === product.stock}
-                  onClick={() => {
-                    setUnits(units + 1);
-                  }}
-                >
-                  <BsPlus />
-                </button>
-              </div>
-            </div>
-          </div>
-          <div className="col-8 d-flex justify-content-start">
-            {/* falta agregar con las rutas del carrito */}
-            <button onClick={()=>{handleCarrito(product._id,user._id,units)}} className="cartButton btn btn-danger ">
-              Agregar al carrito
-            </button>
-          </div>
-        </div>
+        <ButtonSingleView />
       </div>
       <div className="row cols py-5">
         <div className="col-6    ">

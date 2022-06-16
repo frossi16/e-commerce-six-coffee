@@ -35,7 +35,6 @@ class ProductServices {
     }
   }
   static async addOne(body) {
-    console.log(Product);
     try {
       await Product.create(body);
       return {

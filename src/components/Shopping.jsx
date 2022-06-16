@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { AiOutlineShoppingCart } from 'react-icons/ai'
 import { RiDeleteBin6Line } from 'react-icons/ri'
 import { BsCurrencyDollar } from 'react-icons/bs'
@@ -10,6 +10,13 @@ const Shopping = () => {
     /* Agregar botón de finalizar compra */
     /* Termianr de dar estilo */
     /* Hacer que si el carrito está vacio permita ir al home */
+    // const user = useSelector(state=>state.userLogin)
+
+    // useEffect(()=>{
+    //     if(user._id)
+    //     dispatch(getCart(user._id))
+    // },[])
+
     return (
         <div class="text-bg-light p-3">
             <div className='row container-col'>

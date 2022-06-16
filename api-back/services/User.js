@@ -58,8 +58,9 @@ class UserServices {
 
   static async getAdminUpdate(id, body) {
     try {
-      await User.findByIdAndUpdate(id, body);
-      return { error: false, data: `Usuario promovido a admin` };
+      const updatedUser = await User.findByIdAndUpdate(id, body);
+      updatedUser.admin = body.admin;
+      return { error: false, data: updatedUser};
     } catch (error) {
       console.log("error", error);
       return { error: true, data: "No se logro introducir los cambios" };

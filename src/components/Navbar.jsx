@@ -9,7 +9,7 @@ import Categories from "./Categories"
 import { getCategories } from "../state/categories";
 import Orders from "./Orders";
 import MenuAdmin from "./MenuAdmin";
-
+import { getAllUserRequest } from "../state/userDB";
 
 
 
@@ -26,7 +26,6 @@ const Navbar = () => {
   //LLAMADOS A TODOS LOS REDUCERS
   const user = useSelector((state) => state.userLogin);
   const categories = useSelector((state)=>state.categories)
-  console.log(categories);
   const dispatch = useDispatch();
   // const userDB = useSelector((state) => state.userDB);
   // const productosDB = useSelector((state) => state.productos);
@@ -37,6 +36,9 @@ const Navbar = () => {
 
   useEffect(()=>{
     dispatch(getCategories())
+    dispatch(getAllUserRequest())
+
+
   },[])
 
 

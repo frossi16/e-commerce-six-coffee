@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -16,6 +16,7 @@ import AdminProducts from "./components/AdminProducts";
 import Error from "./components/Error";
 import UserOrders from "./components/UserOrders";
 import Endpoint from './components/Endpoiont'
+
 
 const App = () => {
   const dispatch = useDispatch();
@@ -41,11 +42,11 @@ const App = () => {
         <Route path="/products/:id" element={<SingleProduct />} />
         <Route path="/shopping" element={<Shopping />} />
         <Route path="/category/:category" element={<Grid />} />
-        <Route path="/admin/users" element={<AdminCategories />} />
-        <Route path="/admin/categories" element={<AdminUsers />} />
+        <Route path="/admin/categories" element={<AdminCategories />} />
+        <Route path="/admin/users" element={<AdminUsers />} />
         <Route path="/admin/products" element={<AdminProducts />} />
         <Route path="/404" element={<Error />} />
-        <Route path="/*" element={<Error />} />
+        <Route path="/*" element={<Navigate to ="/404" />} />
         <Route path="/orders" element={<UserOrders />} />
         <Route path='/finish' element={<Endpoint />} />
       </Routes>

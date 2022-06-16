@@ -55,9 +55,9 @@ class RoutersUser {
 
   static async getAdminUpdate(req, res) {
     
-    if (req.body.admin === false && req.user.id === req.params.id) {
-      return res.senStatus(401);
-    }
+    // if (req.body.admin === false && req.user.id === req.params.id) {
+    //   return res.senStatus(401);
+    // }
     const { error, data } = await UserServices.getAdminUpdate(
       req.params.id,
       req.body

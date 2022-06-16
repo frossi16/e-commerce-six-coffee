@@ -1,6 +1,5 @@
-import { createAsyncThunk, createReducer } from "@reduxjs/toolkit";
+import { createAsyncThunk, createReducer,current } from "@reduxjs/toolkit";
 import axios from "axios";
-import { current } from "@reduxjs/toolkit";
 
 export const getReviews = createAsyncThunk("GET_REVIEWS",(value) => {
   return axios
