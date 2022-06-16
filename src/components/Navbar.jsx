@@ -26,7 +26,7 @@ const Navbar = () => {
   //LLAMADOS A TODOS LOS REDUCERS
   const user = useSelector((state) => state.userLogin);
   const categories = useSelector((state)=>state.categories)
-  console.log(categories);
+  // console.log(categories);
   const dispatch = useDispatch();
   // const userDB = useSelector((state) => state.userDB);
   // const productosDB = useSelector((state) => state.productos);

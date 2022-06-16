@@ -6,8 +6,10 @@ const HistorialSchema = new Schema({
         type:String,
         required:true,
     },
+    //revisar segun la pag de internet
     venta:{
-        type:Object
+        type:[Object],
+        default: undefined,
     }
 });
 

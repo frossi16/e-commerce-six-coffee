@@ -9,8 +9,9 @@ const CarritoSchema = new Schema({
    
   // posible guardado de la ventas {maxi}
   
-  idProducto:{
-    type:String
+  idProduct:{
+    type:String,
+    required: true,
   },
 
   img:{

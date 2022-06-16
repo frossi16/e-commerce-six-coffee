@@ -3,7 +3,6 @@ import axios from "axios";
 
 export const sendLoginRequest = createAsyncThunk( "LOGIN",
   ({ email, password }) => {
-    console.log(email.value,password.value);
 
     return axios
       .post("http://localhost:3030/user/login", {

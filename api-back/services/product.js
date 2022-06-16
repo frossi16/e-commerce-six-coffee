@@ -3,7 +3,6 @@ const Comment = require("../models/Comments")
 
 class ProductServices {
   static async getAll(params) {
-    console.log(params);
     try {
       const data = await Product.find(params).exec();
       return {
@@ -35,7 +34,6 @@ class ProductServices {
     }
   }
   static async addOne(body) {
-    console.log(Product);
     try {
       await Product.create(body);
       return {

@@ -3,7 +3,6 @@ const ProductServices = require("../services/product");
 class ProductController {
   static async getAll(req, res) {
     const { error, data } = await ProductServices.getAll();
-
     if (error) {
       return res.status(404).send(data);
     }
@@ -11,18 +10,15 @@ class ProductController {
   }
 
   static async getAllByCategory(req, res) {
-
     const { error, data } = await ProductServices.getAll({category:req.params.category});
-
     if (error) {
       return res.status(404).send(data);
     }
     res.status(200).send(data);
   }
+
   static async getAllByName(req, res) {
-
     const { error, data } = await ProductServices.getAll({name:req.params.name});
-
     if (error) {
       return res.status(404).send(data);
     }
@@ -31,7 +27,6 @@ class ProductController {
 
   static async getOne(req, res) {
     const { error, data } = await ProductServices.getOne(req.params.id);
-
     if (error) {
       return res.status(404).send(data);
     }
@@ -40,7 +35,6 @@ class ProductController {
 
   static async addOne(req, res) {
     const { error, data } = await ProductServices.addOne(req.body);
-
     if (error) {
       return res.status(500).send({ message: data.message });
     }
@@ -52,7 +46,6 @@ class ProductController {
       req.params.id,
       req.body
     );
-
     if (error) {
       return res.status(404).send(data);
     }
@@ -61,15 +54,11 @@ class ProductController {
 
   static async deleteOne(req, res) {
     const { error, data } = await ProductServices.deleteOne(req.params.id);
-
     if (error) {
       return res.status(404).send(data);
     }
     res.status(200).send(data);
   }
-
-
-
 
   static async getReviews(req, res) {
     const { error, data } = await ProductServices.getReviews(req.params.id);
@@ -81,14 +70,11 @@ class ProductController {
 
   static async addReviews(req, res) {
     const { error, data } = await ProductServices.addReviews(req.body);
-    console.log(req.body + '     body')
     if (error) {
       return res.status(500).send({ message: data.message });
     }
     res.status(201).send(data);
   }
-
-
 
 }
 

@@ -158,8 +158,7 @@ a {
   background-color: white; }
 
 .viewImg {
-  max-width: 40%;
-  }
+  width: 40%; }
 
 .cardButton {
   width: 70%; }
@@ -188,15 +187,3 @@ a {
   display: flex;
   flex-wrap: wrap;
   width: 100%; }
-
-.navPosition{
-  z-index: 3000;
-}
-
-.error{
-  height: 600px;
-  background-color: white;
-  font-weight: bold;
-  font-size: 4vw;
-  padding-top: 100px;
-}

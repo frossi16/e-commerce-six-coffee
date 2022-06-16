@@ -51,7 +51,7 @@ const products =[
         description: "Variedad de café molido Moka de 250g de Café Martínez. Pack reforzado especialmente para conservar el café."
     },
     {
-        title: 'Café en grano Colombia 1kg',
+        title: 'Café en Grano Colombia 1kg',
         price: 7380,
         category: 'Grano',
         stock: 10,
@@ -59,16 +59,15 @@ const products =[
         description: "Variedad de café en grano Colombia de 1kg de Café Martínez. Pack reforzado especialmente para conservar el café."
     },
     {
-        title: 'Café en grano Brasil 1kg',
+        title: 'Café en Grano Brasil 1kg',
         price: 6030,
         category: 'Grano',
         stock: 10,
         image:'https://cafemartinez.vtexassets.com/arquivos/ids/155507-1200-auto?v=637463658733670000&width=1200&height=auto&aspect=true',
         description: "Variedad de café en grano Brasil de 1kg de Café Martínez. Pack reforzado especialmente para conservar el café."
-        
     },
     {
-        title: 'Café en grano Moka 1kg',
+        title: 'Café en Grano Moka 1kg',
         price: 6300,
         category: 'Grano',
         stock: 10,
@@ -76,7 +75,7 @@ const products =[
         description: "Variedad de café en grano Moka de 1kg de Café Martínez. Pack reforzado especialmente para conservar el café."
     },
     {
-        title: 'Café en grano Brasil 1kg',
+        title: 'Café en Grano Brasil 1kg',
         price: 6030,
         category: 'Grano',
         stock: 10,
@@ -84,7 +83,7 @@ const products =[
         description: "Variedad de café en grano Brasil de 1kg de Café Martínez. Pack reforzado especialmente para conservar el café."
     },
     {
-        title: 'Café en grano Selecto 1kg',
+        title: 'Café en Grano Selecto 1kg',
         price: 6444,
         category: 'Grano',
         stock: 10,
@@ -92,7 +91,7 @@ const products =[
         description: "Variedad de café en grano Selecto de 1kg de Café Martínez. Pack reforzado especialmente para conservar el café."
     },
     {
-        title: 'Café en grano Tipo Italiano 1kg',
+        title: 'Café en Grano Tipo Italiano 1kg',
         price: 6300,
         category: 'Grano',
         stock: 10,
