@@ -2,32 +2,18 @@ const express = require("express");
 const appRoutes = express();
 const user = require("../routes/user");
 const productsRouter = require("./product");
-const carritoCompra = require("./ventas"); // reedirijo la ruta al controller{maxi}
-const Historials = require("../models/Historial");
-const CarritoPosta = require("../models/CarritoPosta.js");
-const RoutersVentas = require('./ventas')
+const carritoCompra = require("./carrito"); // reedirijo la ruta al controller{maxi}
+const HistorialRoutes = require("./historialRoutes");
+const aouthRoute = require('./aouthRoute')
+const RoutersVentas = require("./carrito");
 const categoryRouter = require("./category")
-// prueba de confirmacion de venta del historial {maxi}
-// appRoutes.post("/prueba/:id", async (req, res) => {
-//   const carrito = await CarritoPosta.find({idUser:req.params.id})
-//     await Historials.create({
-//         idUser:req.params.id,
-//         venta:carrito});
-//        await CarritoPosta.deleteMany({idUser:req.params.id})
-//   res.send("todo joya pa");
-// });
 
-// appRoutes.get("/prueba/:id", async (req, res) => {
-//   const prueba = await Historials.find({ idUser:req.params.id });
-//   res.send(prueba);
-// });
-
+appRoutes.use("/category", categoryRouter);
 appRoutes.use("/carrito", carritoCompra);
 appRoutes.use("/user", user);
-appRoutes.use("/category", categoryRouter);
-
 appRoutes.use("/products", productsRouter);
+appRoutes.use("/historial", HistorialRoutes);
+appRoutes.use('/aouth',aouthRoute)
 appRoutes.use("/ventas", RoutersVentas);
 
 module.exports = appRoutes;
-

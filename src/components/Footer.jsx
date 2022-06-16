@@ -5,9 +5,6 @@ import { FaInstagramSquare } from 'react-icons/fa'
 import { BsLinkedin } from 'react-icons/bs'
 import { IoLogoYoutube } from 'react-icons/io'
 import { Link } from 'react-router-dom'
-
-
-
 import logo from '../assets/Logo.png'
 
 

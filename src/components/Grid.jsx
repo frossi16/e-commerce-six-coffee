@@ -13,6 +13,7 @@ const Grid = () => {
   const productByCategory = useSelector(state => state.productsByCategory)
   // const [products, setProducts] = useState([]);
 
+
   useEffect(()=>{
     if(category) dispatch(getProductsByCateory({category}))
     else dispatch(getAllProductRequest())

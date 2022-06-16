@@ -2,21 +2,18 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const CarritoSchema = new Schema({
-    idUser:{
-        type:String,
-        required:true,
-    },
-   
-  // posible guardado de la ventas {maxi}
-  
-  idProducto:{
-    type:String
+  idUser: {
+    type: String,
+    required: true,
   },
 
-  img:{
-    type:String,
+  idProducto: {
+    type: String,
   },
-  // imagen de referencia {maxi}
+
+  img: {
+    type: String,
+  },
 
   nameProducto: {
     type: String,

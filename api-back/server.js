@@ -7,7 +7,7 @@ const appRoutes = require("./routes");
 const volleyball = require("volleyball");
 const passport = require("passport");
 require("./passport/LocalAutentificacion");
-
+require('./passport/AouthGoogle')
 require("dotenv").config();
 require("./db");
 

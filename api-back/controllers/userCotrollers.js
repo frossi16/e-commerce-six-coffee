@@ -26,10 +26,10 @@ class RoutersUser {
   }
 
   static async getLogin(req, res) {
+    console.log("llego asta aca")
     const { error, data } = await UserServices.getLogin(req.body, req.user);
-    console.log(error)
-
     if (error) {
+      console.log(error);
       return res.status(400).send(data);
     }
     res.status(201).send(data);
@@ -53,8 +53,7 @@ class RoutersUser {
     res.status(201).send(data);
   }
 
-  static async getAdminUpdate(req, res) {
-    
+  static async getAdminUpdate(req, res) {    
     // if (req.body.admin === false && req.user.id === req.params.id) {
     //   return res.senStatus(401);
     // }
