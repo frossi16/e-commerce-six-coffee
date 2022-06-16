@@ -115,9 +115,14 @@ class ProductServices {
   // ariel
   static async searchByTitle(title) {
     try {
-      const response = await Product.find({
-        title: { $regex: title},
-      });
+      const response = await Product.find(
+        {
+        title: { $regex: title,
+        
+        },
+      }
+      
+      );
       return {
         error: false,
         response,
