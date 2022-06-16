@@ -1,5 +1,5 @@
 const Product = require("../models/Product");
-const Comment = require("../models/Comments")
+const Comment = require("../models/Comments");
 
 class ProductServices {
   static async getAll(params) {
@@ -80,10 +80,9 @@ class ProductServices {
     }
   }
 
-
   static async getReviews(productId) {
     try {
-      const data = await Comment.find({productId:productId}).exec();
+      const data = await Comment.find({ productId: productId }).exec();
       return {
         error: false,
         data: data,
@@ -112,6 +111,28 @@ class ProductServices {
     }
   }
 
+  // ariel
+  static async searchByTitle(title) {
+    try {
+      const response = await Product.find(
+        {
+        title: { $regex: title,
+        
+        },
+      }
+      
+      );
+      return {
+        error: false,
+        response,
+      };
+    } catch (error) {
+      return {
+        error: true,
+        response: error,
+      };
+    }
+  }
 }
 
 module.exports = ProductServices;

@@ -16,6 +16,8 @@ import AdminProducts from "./components/AdminProducts";
 import Error from "./components/Error";
 import UserOrders from "./components/UserOrders";
 import Endpoint from './components/Endpoiont'
+import Search from "./components/Search";
+
 
 const App = () => {
   const dispatch = useDispatch();
@@ -48,6 +50,7 @@ const App = () => {
         <Route path="/*" element={<Navigate to ="/404" />} />
         <Route path="/orders" element={<UserOrders />} />
         <Route path='/finish' element={<Endpoint />} />
+        <Route path="/search" element={<Search />} />
       </Routes>
       <Footer />
     </>

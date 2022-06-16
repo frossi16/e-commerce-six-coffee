@@ -14,4 +14,7 @@ router.get("/category/:category",ProductController.getAllByCategory)
 router.get("/:id/reviews", ProductController.getReviews)
 router.post("/:id/reviews", ProductController.addReviews)
 
+//ariel
+router.get("/searchByTitle/:title", ProductController.searchByTitle)
+
 module.exports = router;

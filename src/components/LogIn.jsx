@@ -1,19 +1,12 @@
-import React, { useState } from 'react'
-import axios from 'axios'
-import useInput from '../hooks/useInput'
-import { useNavigate } from 'react-router-dom'
-// import '../sass/forms.scss'
-/* Sabri: HIce una copia para poder dar estilo al formulario y probar el axios*/
-/* En el archivo Sigup está fallando el registro por las validaciones */
+import React from "react";
+
+import useInput from "../hooks/useInput";
+import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { sendLoginRequest } from "../state/userLogin";
-import { getAllUserRequest } from "../state/userDB";
-import { getAllProductRequest } from "../state/productos";
-import { getAllVentasRequest } from "../state/ventas";
-
-
 
 function NewUser() {
+
     const password = useInput()
     const email = useInput()
     const navigate = useNavigate()
@@ -21,33 +14,9 @@ function NewUser() {
 
     const handlerSubmit = (e) => {
         e.preventDefault();
-    
-        dispatch(sendLoginRequest({ email, password })); //guarda el usuario logeado
-    
-        // dispatch(getAllUserRequest()); // Trae todos los usuarios
-        // dispatch( getAllProductRequest()) // Trae todos los usuarios
-        // dispatch( getAllVentasRequest()) // Trae todos los usuarios
-    
+        dispatch(sendLoginRequest({ email, password })); 
         navigate("/");
       };
-
-    // const handlerSubmit = (e) => {
-    //     e.preventDefault()
-    //     axios.post('http://localhost:3030/user/login', ({ email: email.value, password: password.value }))
-    //         .then((data) => {
-    //             console.log(data.data._id)
-    //             console.log(data.data.name)
-
-    //             localStorage.setItem('user', JSON.stringify(data.data._id))
-    //             localStorage.setItem('name', JSON.stringify(data.data.name))
-
-    //         })
-    //         .then(() => navigate('/'))
-    //         .catch(error => console.log(error))
-    // }
-
-
-
 
     return (
         <>
@@ -63,6 +32,7 @@ function NewUser() {
             </form>
         </>
     );
+
 }
 
 export default NewUser;

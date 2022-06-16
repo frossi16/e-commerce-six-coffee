@@ -22,11 +22,21 @@ export const addProduct = createAsyncThunk("ADD_PRODUCT", async(value) => {
     return res.data
 });
 
+
 export const deleteProduct = createAsyncThunk("DELETE_PRODUCT", async(value) => {
   await axios
     .delete(`http://localhost:3030/products/${value._id}`)
   return value
   });
+
+
+export const searchProducts = createAsyncThunk("SEARCH_PRODUCTOS", ({title}) => {
+  return axios
+    .get(`http://localhost:3030/products/searchByTitle/${title}`)
+    .then((res) => res.data);
+});
+
+
 
 
 const productosReducer = createReducer(
@@ -43,6 +53,8 @@ const productosReducer = createReducer(
     })
     return aux2;
   },
+
+  [searchProducts.fulfilled]: (state, action) => action.payload,
 });
 
 export default productosReducer;

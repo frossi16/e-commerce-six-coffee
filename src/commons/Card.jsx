@@ -2,9 +2,10 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import ButtonAddToCart from "./ButtonAddToCart";
 
-const Card = ({ key,product }) => {
-  const navigate = useNavigate();
 
+const Card = ({ key,product }) => {
+
+  const navigate = useNavigate();
   const handleClick = (id) => {
     navigate(`/products/${id}}`);
   };

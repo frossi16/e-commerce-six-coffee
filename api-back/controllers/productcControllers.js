@@ -11,8 +11,9 @@ class ProductController {
   }
 
   static async getAllByCategory(req, res) {
-
-    const { error, data } = await ProductServices.getAll({category:req.params.category});
+    const { error, data } = await ProductServices.getAll({
+      category: req.params.category,
+    });
 
     if (error) {
       return res.status(404).send(data);
@@ -20,8 +21,9 @@ class ProductController {
     res.status(200).send(data);
   }
   static async getAllByName(req, res) {
-
-    const { error, data } = await ProductServices.getAll({name:req.params.name});
+    const { error, data } = await ProductServices.getAll({
+      name: req.params.name,
+    });
 
     if (error) {
       return res.status(404).send(data);
@@ -68,9 +70,6 @@ class ProductController {
     res.status(200).send(data);
   }
 
-
-
-
   static async getReviews(req, res) {
     const { error, data } = await ProductServices.getReviews(req.params.id);
     if (error) {
@@ -81,15 +80,24 @@ class ProductController {
 
   static async addReviews(req, res) {
     const { error, data } = await ProductServices.addReviews(req.body);
-    console.log(req.body + '     body')
+    console.log(req.body + "     body");
     if (error) {
       return res.status(500).send({ message: data.message });
     }
     res.status(201).send(data);
   }
 
+  //ariel
+  static async searchByTitle(req, res) {
+    const { title } = req.params;
 
+    const { error, response } = await ProductServices.searchByTitle(title);
 
+    if (error) {
+      return res.status(404).send(response);
+    }
+    res.status(200).send(response);
+  }
 }
 
 module.exports = ProductController;

@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Card from "../commons/Card";
 import { getAllProductRequest } from "../state/productos";
 import { useParams } from "react-router";
 import { getProductsByCateory } from "../state/productByCategory";
 import header from '../assets/headerProductos.jpg'
+
+
 
 const Grid = () => {
   const dispatch = useDispatch();
@@ -20,13 +22,6 @@ const Grid = () => {
   },[category])
 
 
-  // useEffect(() => {
-  //   axios.get("http://localhost:3030/products/all")
-  //   .then(res => res.data)
-  //   .then(prod => setProducts(prod));
-  // }, []);
-
-  // console.log(products)
   return category ? 
   (
     <>

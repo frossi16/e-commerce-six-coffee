@@ -1,9 +1,10 @@
 import { createAsyncThunk, createReducer } from "@reduxjs/toolkit";
 import axios from "axios";
 
-export const sendLoginRequest = createAsyncThunk( "LOGIN",
+export const sendLoginRequest = createAsyncThunk(
+  "LOGIN",
   ({ email, password }) => {
-    console.log(email.value,password.value);
+    console.log(email.value, password.value);
 
     return axios
       .post("http://localhost:3030/user/login", {
@@ -27,11 +28,20 @@ export const userLoged = createAsyncThunk("ISLOGED", (value) => {
   if (value) return value;
 });
 
+export const userLogOut = createAsyncThunk("LOGOUT", () => {
+  return axios
+    .post(`http://localhost:3030/user/logout`)
+
+    .then(() => localStorage.removeItem("user"))
+    .then(() => window.location.reload());
+});
+
 const userLoginReducer = createReducer(
   {},
   {
     [sendLoginRequest.fulfilled]: (state, action) => action.payload,
     [userLoged.fulfilled]: (state, action) => action.payload,
+    [userLogOut.fulfilled]: (state, action) => action.payload,
   }
 );
 
