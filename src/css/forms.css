@@ -1,22 +1,11 @@
-/* Sabri: Dejo un nuevo formato para el formulario */
+
 .form {
   max-width: 40%;
   margin: 3% 30% 2% 30%;
   /*  color: blue; */ }
 
-body {
-  background-image: url("../assets/cafe1.webp");
-  background-size: cover;
-  background-color: transparent;
-  /* opacity: 70%; */ }
 
-/* .titleForm{
-    padding-bottom:5%;
-    color: red;
-} */
-/*.error{
-    color:red;
-} */
+
 .btn-form {
   width: 100%;
   color: grey;

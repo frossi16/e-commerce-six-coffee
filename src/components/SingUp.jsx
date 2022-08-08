@@ -3,6 +3,7 @@ import axios from 'axios'
 import useInput from '../hooks/useInput'
 import { useNavigate } from 'react-router-dom'
 
+
 function NewUser() {
 
     const name = useInput()
@@ -31,11 +32,10 @@ function NewUser() {
                     <input class="form-control input" placeholder='Last Name' {...lastName} />
                 </div>
                 <div className="mb-3">
-
                     <input type="email" className="form-control input" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder='example@email.com' {...email} />
                 </div>
                 <div className="mb-3">
-                    <input type="password" className="form-control input" id="exampleInputPassword1" placeholder='Password' {...password} />
+                    < input type="password" className="form-control input" id="exampleInputPassword1" placeholder='Password' {...password} />
                 </div>
                 <button type="submit" className="btn btn-danger input btn-form btn-register">Sing Up</button>
             </form>
