@@ -1,0 +1,59 @@
+/* Sabri: Dejo un nuevo formato para el formulario */
+
+.form{
+   max-width: 40%;
+    margin: 3% 30% 2% 30%;
+   /*  color: blue; */
+}
+
+body{
+    background-image: url('../assets/cafe1.webp');
+    background-size: cover ;
+    background-color: transparent;
+    /* opacity: 70%; */
+}
+
+
+/* .titleForm{
+    padding-bottom:5%;
+    color: red;
+} */
+
+/*.error{
+    color:red;
+} */
+
+.btn-form{
+    width: 100%;
+        color: grey;
+        cursor: pointer;
+        transition: .3s ease all;
+        background-color: #E50914;
+        border-color: none;
+        margin-top: 2%;
+        border-radius: 0.31em;
+
+}
+
+.btn-register{
+        background: rgba(0,0,0, 0.5);
+        color: #fff;
+        border-color: rgba(0,0,0, 0.5);
+        cursor: pointer;
+        transition: .3s ease all;
+        background: rgba(73, 70, 70, 0.3);
+        border-radius: 0.31em;
+       
+       
+}
+
+.title-register-login{
+    margin-bottom: 1%;
+    text-align: center;
+    color: #E50914;
+    font-weight: bold;
+}
+
+
+
+
